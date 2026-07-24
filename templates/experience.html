@@ -1,0 +1,43 @@
+{% from "_partials.html" import icon %}
+{% extends "base.html" %}
+{% block title %}Experience - Jhansi Yeoj Gatus{% endblock %}
+{% block content %}
+<div class="section">
+  <div class="section-header">
+    <div>
+      <h2>Experience</h2>
+      <span class="section-num">( 03 )</span>
+    </div>
+    <div class="section-meta">{{ data.experience|length }} roles</div>
+  </div>
+
+  <div class="timeline">
+    {% for e in data.experience %}
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <div>
+            <h4>{{ e.role }}</h4>
+            <p class="muted" style="margin: 3px 0 0; font-size: 12.5px;">{{ e.company }} · {{ e.location }}</p>
+          </div>
+          <div class="timeline-meta">{{ e.start }} – {{ e.end or 'Present' }}</div>
+        </div>
+        <ul>
+          {% for a in e.achievements %}
+          <li>{{ a }}</li>
+          {% endfor %}
+        </ul>
+        {% if e.tech %}
+        <div class="timeline-tags">
+          {% for t in e.tech %}
+          <span class="tag">{{ t }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

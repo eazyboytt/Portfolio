@@ -1,0 +1,37 @@
+{% from "_partials.html" import icon %}
+{% extends "base.html" %}
+{% block title %}Jhansi Yeoj Gatus{% endblock %}
+{% block content %}
+<div class="hero">
+  <h1>{{ p.name }}</h1>
+  <div class="hero-sub">{{ p.title }}</div>
+  <p class="hero-lead">{{ p.summary }}</p>
+  <div class="hero-actions">
+    <a href="mailto:{{ p.email }}" class="btn primary">Email Me</a>
+  </div>
+</div>
+
+<div class="contact-bar">
+  <div class="contact-item">
+    <div class="contact-icon">{{ icon('mail', 16) }}</div>
+    <div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">{{ p.email }}</div>
+    </div>
+  </div>
+  <div class="contact-item">
+    <div class="contact-icon">{{ icon('settings', 16) }}</div>
+    <div>
+      <div class="contact-label">Phone</div>
+      <div class="contact-value">{{ p.phone }}</div>
+    </div>
+  </div>
+  <div class="contact-item">
+    <div class="contact-icon">{{ icon('home', 16) }}</div>
+    <div>
+      <div class="contact-label">Location</div>
+      <div class="contact-value">{{ p.location }}</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

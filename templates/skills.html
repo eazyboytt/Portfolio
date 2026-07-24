@@ -1,0 +1,26 @@
+{% from "_partials.html" import icon %}
+{% extends "base.html" %}
+{% block title %}Skills - Jhansi Yeoj Gatus{% endblock %}
+{% block content %}
+<div class="section">
+  <div class="section-header">
+    <div>
+      <h2>Skills</h2>
+      <span class="section-num">( 02 )</span>
+    </div>
+    <div class="section-meta">{{ data.skills|length }} skills</div>
+  </div>
+
+  <div class="skills-grid">
+    {% for s in data.skills %}
+    <div class="skill-tile">
+      <div class="skill-dot" style="background: {% if s.level == 'Advanced' %}#34d399; background-color: rgba(52,211,153,0.12); {% elif s.level == 'Intermediate' %}#f59e42; background-color: rgba(245,158,66,0.12); {% else %}#818cf8; background-color: rgba(129,140,248,0.12); {% endif %}"></div>
+      <div class="skill-tile-info">
+        <div class="skill-tile-name">{{ s.name }}</div>
+        <div class="skill-tile-level">{{ s.level }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

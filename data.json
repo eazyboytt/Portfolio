@@ -1,0 +1,124 @@
+{
+  "profile": {
+    "name": "Jhansi Yeoj Gatus",
+    "title": "IT Support",
+    "company": "PRTNA Outsourcing Corporation (StrataStaff)",
+    "email": "jhansiyeojgatus10@gmail.com",
+    "phone": "09530541704",
+    "location": "Magalang Pampanga",
+    "summary": "IT Support with hands-on experience in end-to-end service delivery, network infrastructure administration, Microsoft 365/Azure support, VPN/remote access, SDN multi-site management, web filtering, and email migration automation. Proven ability to support cross-team operations, onboard users, and turn ad-hoc requests into repeatable IT support processes.",
+    "target_roles": [
+      "IT Support",
+      "Help Desk Engineer",
+      "Systems Administrator",
+      "Network Administrator"
+    ]
+  },
+  "skills": [
+    {"name": "IT Onboarding & User Support", "level": "Advanced", "evidence": "Structured new-hire onboarding covering IT workflows, ticketing, acceptable-use policy, cybersecurity, device handling, and pre-configured tool orientation.", "last_used": "2026-07"},
+    {"name": "Network Infrastructure Administration", "level": "Advanced", "evidence": "Router/modem deployment, switch configuration, VLAN implementation, LAN cabling, wireless setup, and performance monitoring.", "last_used": "2026-07"},
+    {"name": "End-User & Technical Support", "level": "Advanced", "evidence": "Hardware/software/network troubleshooting, remote desktop support, VPN configuration, Microsoft 365 installation, Outlook troubleshooting, TeamLogger administration.", "last_used": "2026-07"},
+    {"name": "TP-Link Omada SDN & Multi-Site Administration", "level": "Intermediate", "evidence": "Deployment of centralized Omada SDN across sites, Omada Controller management, WAN failover, load balancing, QoS, VPN, and device provisioning.", "last_used": "2026-07"},
+    {"name": "Network Security & Web Filtering", "level": "Intermediate", "evidence": "AdGuard DNS administration, web-filtering policies, security policy enforcement, malware reduction, and network hygiene.", "last_used": "2026-07"},
+    {"name": "Client & IT Coordination", "level": "Intermediate", "evidence": "Collaboration with clients and onshore IT teams on access management, account setup, remote desktop configuration, and technical support requests.", "last_used": "2026-07"},
+    {"name": "Microsoft Azure Administration", "level": "Intermediate", "evidence": "User account management, password resets, access administration, basic DNS configuration, and tenant-level support.", "last_used": "2026-07"},
+    {"name": "cPanel & Web Hosting Support", "level": "Intermediate", "evidence": "cPanel environments for email/domain hosting, mailbox administration, DNS configuration, email delivery troubleshooting, and website hosting support.", "last_used": "2026-07"},
+    {"name": "Email Migration Automation", "level": "Intermediate", "evidence": "PowerShell automation to migrate user mailboxes from IMAP platforms to Microsoft Exchange Online (Microsoft 365).", "last_used": "2026-07"},
+    {"name": "Microsoft 365 / Exchange", "level": "Advanced", "evidence": "Mailbox migrations, OneDrive provisioning, M365 rollout support, post-migration remediation, Outlook troubleshooting.", "last_used": "2026-07"},
+    {"name": "Windows Administration", "level": "Advanced", "evidence": "Endpoint troubleshooting, OS image handling, driver/installer support.", "last_used": "2026-07"},
+    {"name": "VPN & Remote Access", "level": "Advanced", "evidence": "OpenVPN, GlobalProtect, RDP configuration, VPN onboarding, remote desktop support.", "last_used": "2026-07"},
+    {"name": "Networking", "level": "Advanced", "evidence": "LAN/WAN configuration, VLANs, TCP/IP, DNS/routing, wireless setup, switch/router administration.", "last_used": "2026-07"},
+    {"name": "ServiceNow / Ticketing", "level": "Intermediate", "evidence": "Ticket lifecycle management, triage, SLA tracking, reporting for management visibility.", "last_used": "2026-07"},
+    {"name": "Application Support", "level": "Intermediate", "evidence": "Teams, Zoom, Webex, Front, LINE, BlueStacks, Brave/Chrome, TeamLogger administration.", "last_used": "2026-07"},
+    {"name": "Automation / Scripting", "level": "Intermediate", "evidence": "PowerShell automation for email migrations, batch scripting, task automation.", "last_used": "2026-07"}
+  ],
+  "experience": [
+    {
+      "company": "PRTNA Outsourcing Corporation (StrataStaff)",
+      "role": "IT Support",
+      "start": "2024 - 12/16",
+      "end": null,
+      "location": "Philippines",
+      "achievements": [
+        "IT Onboarding & User Support: Conducted structured IT onboarding sessions for new employees, covering support processes, ticketing systems, acceptable-use policies, cybersecurity best practices, company device handling, and pre-configured tools to ensure a secure and productive work environment.",
+        "Network Infrastructure Administration: Managed and supported network infrastructure, including router and modem deployment, switch configuration, VLAN implementation, LAN cabling, and wireless network setup. Monitored network performance and resolved connectivity issues to maintain stable and secure business operations.",
+        "End-User & Technical Support: Provided hardware, software, and network troubleshooting for end users, including remote desktop support, VPN configuration, Microsoft 365 installation, Outlook email troubleshooting, and TeamLogger setup/administration. Supported user onboarding, account provisioning, credential management, and remote access solutions.",
+        "TP-Link Omada SDN & Multi-Site Network Administration: Designed, deployed, and administered centralized TP-Link Omada SDN infrastructure across multiple sites using the Omada Controller for unified management. Configured WAN failover, load balancing, Quality of Service (QoS), VPN connectivity, and device provisioning while monitoring performance, client activity, and infrastructure health.",
+        "Network Security & Web Filtering: Managed AdGuard DNS and web-filtering solutions to enforce security policies, block malicious websites, reduce malware threats, and enhance overall network security.",
+        "Client & IT Coordination: Collaborated with clients and onshore IT teams to manage user access, account setup, remote desktop configurations, and technical support requests, ensuring timely issue resolution.",
+        "Microsoft Azure Administration: Provided administrative support within Microsoft Azure, including user account management, password resets, access administration, and basic DNS configuration.",
+        "cPanel Administration & Web Hosting Support: Managed cPanel environments for email and domain hosting, including mailbox administration, DNS configuration, email delivery troubleshooting, and website hosting support.",
+        "Email Migration Automation (IMAP to Microsoft Exchange Online): Developed and implemented PowerShell automation to streamline mailbox migrations from IMAP-based email platforms to Microsoft Exchange Online (Microsoft 365)."
+      ],
+      "tech": [
+        "Microsoft 365",
+        "Exchange Online",
+        "Microsoft Azure",
+        "Windows 10/11",
+        "PowerShell",
+        "ServiceNow",
+        "Teams",
+        "TeamLogger",
+        "Zoom",
+        "VPN",
+        "RDP",
+        "TP-Link Omada SDN",
+        "LAN/WAN",
+        "VLAN",
+        "QoS",
+        "Load Balancing",
+        "AdGuard DNS",
+        "Web Filtering",
+        "cPanel",
+        "Email Migration"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "M365 Migration & Access Remediation",
+      "date": "2026-06",
+      "impact": "Reduced follow-up tickets by streamlining mailbox and OneDrive access requests.",
+      "tech": ["Exchange", "OneDrive", "Teams"],
+      "description": "Supported cutover period for Microsoft 365 migration, resolving post-migration access issues and fixing broken file links after mailbox moves."
+    },
+    {
+      "title": "VPN Onboarding for Remote Work",
+      "date": "2026-04",
+      "impact": "Enabled secure remote access for multiple LGS staff across floors.",
+      "tech": ["OpenVPN", "GlobalProtect", "RDP"],
+      "description": "Packaged and deployed VPN configurations, .ovpn profiles, and RDP connection settings for staff onboarding using IT Test and LGS VPN profiles."
+    },
+    {
+      "title": "IMAP to Exchange Online Email Migration Automation",
+      "date": "2026-05",
+      "impact": "Reduced manual migration effort and mailbox cutover errors through PowerShell automation.",
+      "tech": ["PowerShell", "Exchange Online", "IMAP", "Microsoft 365"],
+      "description": "Developed automation scripts to migrate user mailboxes from IMAP-based platforms to Microsoft Exchange Online, improving speed, accuracy, and consistency."
+    },
+    {
+      "title": "Ticket Operations Hygiene",
+      "date": "ongoing",
+      "impact": "Keeps queue clean and SLA-visible with consistent status discipline.",
+      "tech": ["ServiceNow", "Excel/CSV", "Teams"],
+      "description": "Daily triage, assignment, and status updates across Open/Processing/Awaiting/Hold. Export reporting for management visibility."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Cybersecurity in Strata Community Management",
+      "issuer": "Professional Training",
+      "date": "",
+      "status": "Completed"
+    }
+  ],
+  "education": [
+    {
+      "school": "",
+      "degree": "",
+      "field": "",
+      "start": "",
+      "end": ""
+    }
+  ]
+}

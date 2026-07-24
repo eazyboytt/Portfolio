@@ -1,0 +1,65 @@
+{% from "_partials.html" import icon %}
+{% extends "base.html" %}
+{% block title %}About Me - Jhansi Yeoj Gatus{% endblock %}
+{% block content %}
+<div class="section">
+  <div class="section-header">
+    <h2>About Me</h2>
+    <span class="section-num">( 01 )</span>
+  </div>
+
+  <div class="card" style="padding: 24px;">
+    <div style="display:flex; gap: 18px; align-items:start; flex-wrap: wrap;">
+      <div style="flex: 1 1 300px;">
+        <h3 style="margin-bottom: 10px; font-size: 20px;">Who I am</h3>
+        <p>{{ p.summary }}</p>
+        <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="mailto:{{ p.email }}" class="btn primary" style="font-size: 12px; padding: 8px 14px;">Contact Me</a>
+        </div>
+      </div>
+      <div style="display:flex; gap: 10px; flex-wrap: wrap; flex: 1 1 280px;">
+        {% if data.projects %}
+        {% set latest = data.projects[0] %}
+        <div style="flex:1; min-width: 140px;" class="project-card">
+          <div class="project-title" style="font-size:14px; margin-bottom:4px;">Latest Project</div>
+          <p class="project-desc" style="font-size:12.5px; margin: 0;">{{ latest.title }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value">{{ data.skills|length }}</div>
+      <div class="stat-label">Technologies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">{{ data.experience|length }}</div>
+      <div class="stat-label">Roles</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">{{ data.projects|length }}</div>
+      <div class="stat-label">Projects</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 18px;">
+    <h3 style="margin-bottom: 10px; font-size: 18px;">Quick Facts</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px;">
+      <div>
+        <p style="color: var(--muted); font-size: 11px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.4px;">Focus</p>
+        <p style="font-weight: 500;">IT Support & Operations</p>
+      </div>
+      <div>
+        <p style="color: var(--muted); font-size: 11px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.4px;">Company</p>
+        <p style="font-weight: 500;">{{ p.company }}</p>
+      </div>
+      <div>
+        <p style="color: var(--muted); font-size: 11px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.4px;">Status</p>
+        <p style="font-weight: 500; color: #059669;">Available for opportunities</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

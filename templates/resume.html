@@ -1,0 +1,91 @@
+{% from "_partials.html" import icon %}
+{% extends "base.html" %}
+{% block title %}Resume - Jhansi Yeoj Gatus{% endblock %}
+{% block content %}
+<div class="section">
+  <div class="section-header">
+    <div>
+      <h2>Resume</h2>
+      <span class="section-num">( 06 )</span>
+    </div>
+    <div class="section-meta">DOCX export</div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <div>
+        <h3 style="margin-bottom:4px;">Download Resume</h3>
+        <p>Generate a clean, formatted DOCX resume from your current profile, experience, and skills.</p>
+      </div>
+      <a href="/api/resume/docx" class="btn primary">Download DOCX</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Preview</h3>
+    {% set p = data.profile %}
+    <h1 style="font-size:32px;font-weight:700;margin:0 0 4px;color:#ffffff;">{{ p.name }}</h1>
+    <p style="color:var(--indigo-2);font-size:16px;margin:0 0 12px;">{{ p.title }}</p>
+    <p style="color:var(--muted);font-size:13px;">{{ p.phone }} · {{ p.email }} · LinkedIn · {{ p.location }}</p>
+
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">PROFILE</h4>
+    <p>{{ p.summary }}</p>
+
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">PROFESSIONAL EXPERIENCE</h4>
+    {% for e in data.experience %}
+    <div class="timeline-item" style="padding-bottom:18px;">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <div>
+            <h4>{{ e.role }}</h4>
+            <p class="muted" style="margin:3px 0 0;font-size:12.5px;">{{ e.company }} · {{ e.location }}</p>
+          </div>
+          <div class="timeline-meta">{{ e.start }} – {{ e.end or 'Present' }}</div>
+        </div>
+        <ul>
+          {% for a in e.achievements %}
+          <li>{{ a }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">KEY SKILLS</h4>
+    <div class="skills-grid">
+      {% for s in data.skills %}
+      <div class="skill-tile">
+        <div class="skill-dot" style="background: {% if s.level == 'Advanced' %}#34d399; background-color: rgba(52,211,153,0.12); {% elif s.level == 'Intermediate' %}#f59e42; background-color: rgba(245,158,66,0.12); {% else %}#818cf8; background-color: rgba(129,140,248,0.12); {% endif %}"></div>
+        <div class="skill-tile-info">
+          <div class="skill-tile-name">{{ s.name }}</div>
+          <div class="skill-tile-level">{{ s.level }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">EDUCATION</h4>
+    {% for e in data.education %}
+      {% if e.school %}
+      <div class="timeline-content" style="margin-bottom: 10px;">
+        <h4>{{ e.degree }}</h4>
+        <p class="muted" style="margin:3px 0 0;font-size:12.5px;">{{ e.start }} – {{ e.end }} · {{ e.school }}</p>
+      </div>
+      {% endif %}
+    {% endfor %}
+
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">CERTIFICATIONS</h4>
+    {% if data.certifications %}
+      {% for c in data.certifications %}
+      <div class="timeline-content" style="margin-bottom: 10px;">
+        <h4>{{ c.name }}</h4>
+        <p class="muted" style="margin:3px 0 0;font-size:12.5px;">{{ c.issuer }} {% if c.date %}· {{ c.date }}{% endif %} {% if c.status %}· {{ c.status }}{% endif %}</p>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p class="muted">No certifications listed yet.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
