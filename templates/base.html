@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   {% from "_partials.html" import icon %}
@@ -22,38 +22,42 @@
         <div class="sidebar-title">{{ p.title }}</div>
       </div>
     </div>
+
     <nav class="sidebar-nav">
-      <a href="/" class="{% if request_endpoint == 'dashboard' or (request_endpoint is not defined and template_name|default('') == 'dashboard.html') %}active{% endif %}">{{ icon('home', 16) }} Home</a>
-      <a href="/about" class="{% if request_endpoint == 'about' or template_name|default('') == 'about.html' %}active{% endif %}">{{ icon('info', 16) }} About Me</a>
-      <a href="/profile" class="{% if request_endpoint == 'profile' or template_name|default('') == 'profile.html' %}active{% endif %}">{{ icon('user', 16) }} Profile</a>
-      <a href="/skills" class="{% if request_endpoint == 'skills' or template_name|default('') == 'skills.html' %}active{% endif %}">{{ icon('zap', 16) }} Skills</a>
-      <a href="/experience" class="{% if request_endpoint == 'experience' or template_name|default('') == 'experience.html' %}active{% endif %}">{{ icon('settings', 16) }} Experience</a>
-      <a href="/projects" class="{% if request_endpoint == 'projects' or template_name|default('') == 'projects.html' %}active{% endif %}">{{ icon('folder', 16) }} Projects</a>
-      <a href="/certifications" class="{% if request_endpoint == 'certifications' or template_name|default('') == 'certifications.html' %}active{% endif %}">{{ icon('shield', 16) }} Certifications</a>
-      <a href="/resume" class="{% if request_endpoint == 'resume' or template_name|default('') == 'resume.html' %}active{% endif %}">{{ icon('download', 16) }} Resume</a>
+      <a href="index.html" class="{% if template_name|default('') == 'dashboard.html' %}active{% endif %}">{{ icon('home', 16) }} Home</a>
+      <a href="about.html" class="{% if template_name|default('') == 'about.html' %}active{% endif %}">{{ icon('info', 16) }} About</a>
+      <a href="profile.html" class="{% if template_name|default('') == 'profile.html' %}active{% endif %}">{{ icon('user', 16) }} Profile</a>
+      <a href="skills.html" class="{% if template_name|default('') == 'skills.html' %}active{% endif %}">{{ icon('zap', 16) }} Skills</a>
+      <a href="experience.html" class="{% if template_name|default('') == 'experience.html' %}active{% endif %}">{{ icon('briefcase', 16) }} Experience</a>
+      <a href="projects.html" class="{% if template_name|default('') == 'projects.html' %}active{% endif %}">{{ icon('folder', 16) }} Projects</a>
+      <a href="certifications.html" class="{% if template_name|default('') == 'certifications.html' %}active{% endif %}">{{ icon('shield', 16) }} Certifications</a>
+      <a href="resume.html" class="{% if template_name|default('') == 'resume.html' %}active{% endif %}">{{ icon('download', 16) }} Resume</a>
     </nav>
-    <div class="sidebar-footer" style="justify-content: space-between;">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <span class="pulse"></span>
-        <span>sys.online · {{ now.year }}</span>
-      </div>
+
+    <div class="sidebar-resume">
+      <a href="{{ resume_docx_url|default('resume.docx') }}">
+        {{ icon('download', 16) }}
+        <span>Download Resume</span>
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
         <span class="icon-slot">{{ icon(request_theme == 'dark' and 'sun' or 'moon', 16) }}</span>
       </button>
+      <span class="pulse"></span>
+      <span>sys.online · {{ now.year }}</span>
     </div>
   </aside>
 
   <main class="main">
     {% block content %}{% endblock %}
     <div class="footer">
-      <div class="footer-logo">
-        {% set name = data.profile.name %}
-        {% set parts = name.split() %}
-        <div class="footer-logo-avatar">{{ parts[0][0] }}{% if parts|length > 1 %}{{ parts[-1][0] }}{% endif %}</div>
-      </div>
-      <p>Designed with precision · {{ data.profile.name }}</p>
+      <span class="footer-logo-avatar">{{ parts[0][0] }}{% if parts|length > 1 %}{{ parts[-1][0] }}{% endif %}</span>
+      Designed with precision · {{ data.profile.name }}
     </div>
   </main>
+
   <script>
     (function() {
       const btn = document.getElementById('theme-toggle');
