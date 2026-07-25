@@ -219,6 +219,8 @@ h1, h2, h3, .display { font-weight: 400; }
   color: var(--muted);
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  justify-content: flex-start;
+  margin-top: auto;
 }
 
 /* Theme toggle */
