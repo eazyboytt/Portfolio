@@ -1,7 +1,11 @@
 from pathlib import Path
 import json
 import re
+import sys
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+sys.path.insert(0, str(Path('C:/Users/eazyboytt/second-brain')))
+from app import build_resume_docx_bytes
 
 ROOT = Path('C:/Users/eazyboytt/second-brain')
 DOCS = ROOT / 'docs'
@@ -44,6 +48,18 @@ env = Environment(
 env.globals['now'] = __import__('datetime').datetime.now()
 env.globals['template_name'] = ''
 
+# Generate resume DOCX for static hosting
+try:
+    docx_bytes = build_resume_docx_bytes()
+    (DOCS / 'resume.docx').write_bytes(docx_bytes.read())
+    resume_docx_url = 'resume.docx'
+except Exception as e:
+    resume_docx_url = '#'
+    print('DOCX build failed:', e)
+
+# Make resume_docx_url available in all templates
+env.globals['resume_docx_url'] = resume_docx_url
+
 routes = {
     'dashboard.html': 'index.html',
     'about.html': 'about.html',
@@ -73,8 +89,11 @@ for template_name, output_name in routes.items():
     # Rewrite nav hrefs to relative paths for GitHub Pages
     for abs_path, rel_name in path_map.items():
         html = html.replace(f'href="{abs_path}"', f'href="{rel_name}"')
-    # Remove server-only endpoints from static build
-    html = html.replace('href="/api/resume/docx"', 'href="#"')
+    # Replace resume download link with static file when available
+    if resume_docx_url != '#':
+        html = html.replace('href="/api/resume/docx"', f'href="{resume_docx_url}"')
+    else:
+        html = html.replace('href="/api/resume/docx"', 'href="#"')
     out = DOCS / output_name
     out.write_text(html, encoding='utf-8')
     print(f'rendered {template_name} -> {out}')

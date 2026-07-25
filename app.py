@@ -81,14 +81,28 @@ def certifications():
 
 @app.route("/api/resume/docx")
 def resume_docx():
+    return send_file(build_resume_docx_bytes(), as_attachment=True, download_name="resume.docx",
+                     mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+
+class DOCXGenerationError(Exception):
+    pass
+
+def build_resume_docx_bytes():
     data = load_data()
     p = data.get("profile", {})
+
+    # Local imports used by the builder
+    from docx import Document
+    from docx.shared import Inches, Pt
+    from docx.oxml import parse_xml
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from io import BytesIO
+
     doc = Document()
     style = doc.styles["Normal"]
     style.font.name = "Calibri"
     style.font.size = Pt(11)
 
-    # Helper: section divider + centered uppercase heading + thin top border
     def add_section_heading(doc, text):
         header = doc.add_paragraph()
         header.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -101,7 +115,6 @@ def resume_docx():
         ppr.append(pBdr)
 
     def add_section_body(doc):
-        # reduced spacing; no extra blank paragraph
         pass
 
     # Header
@@ -117,11 +130,10 @@ def resume_docx():
     contact_text = " | ".join([v for v in [p.get("phone",""), p.get("email",""), "LinkedIn", p.get("location","")] if v])
     contact.add_run(contact_text)
 
-    # thick bottom border for header
     ppr = name_para._element.get_or_add_pPr()
     pBdr = parse_xml(r'<w:pBdr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:bottom w:val="single" w:sz="12" w:space="1" w:color="000000"/></w:pBdr>')
     ppr.append(pBdr)
-    doc.add_paragraph()  # spacing
+    doc.add_paragraph()
 
     # Profile
     add_section_heading(doc, "PROFILE")
@@ -131,7 +143,6 @@ def resume_docx():
     # Professional Experience
     add_section_heading(doc, "PROFESSIONAL EXPERIENCE")
     for e in data.get("experience", []):
-        # Job header row: title/location left, date right, no table borders
         tbl = doc.add_table(rows=1, cols=2)
         tbl.style = "Table Grid"
         tbl.autofit = True
@@ -142,7 +153,6 @@ def resume_docx():
         right = tbl.rows[0].cells[1]
         left.text = f"{e.get('role','')}, {e.get('company','')}, {e.get('location','')}"
         right.text = f"{e.get('start','')} – {e.get('end') or 'Present'}"
-        # Make left bold, right bold
         for cell in (left, right):
             for paragraph in cell.paragraphs:
                 paragraph.alignment = WD_ALIGN_PARAGRAPH.LEFT if cell == left else WD_ALIGN_PARAGRAPH.RIGHT
@@ -150,7 +160,6 @@ def resume_docx():
                     run.bold = True
                     run.font.name = "Calibri"
                     run.font.size = Pt(11)
-        # remove borders
         tbl.style = None
         for row in tbl.rows:
             for cell in row.cells:
@@ -159,7 +168,7 @@ def resume_docx():
                 tcBorders = parse_xml(r'<w:tcBorders xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/></w:tcBorders>')
                 tcPr.append(tcBorders)
         for a in e.get("achievements", []):
-            p = doc.add_paragraph(a, style="List Bullet")
+            doc.add_paragraph(a, style="List Bullet")
         if e.get("tech"):
             doc.add_paragraph("Tech: " + ", ".join(e["tech"]))
     add_section_body(doc)
@@ -214,8 +223,7 @@ def resume_docx():
     buf = BytesIO()
     doc.save(buf)
     buf.seek(0)
-    return send_file(buf, as_attachment=True, download_name="resume.docx",
-                     mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    return buf
 
 def load_data():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
