@@ -3,28 +3,8 @@
 {% block title %}Resume - Jhansi Yeoj Gatus{% endblock %}
 {% block content %}
 <div class="section">
-  <div class="section-header">
-    <div>
-      <h2>Resume</h2>
-      <span class="section-num">( 06 )</span>
-    </div>
-    <div class="section-meta">DOCX export</div>
-  </div>
-
-  <div class="card" style="margin-bottom:18px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <div>
-        <h3 style="margin-bottom:4px;">Download Resume</h3>
-        <p>Generate a clean, formatted DOCX resume from your current profile, experience, and skills.</p>
-      </div>
-      <a href="{{ resume_docx_url|default('/api/resume/docx') }}" class="btn primary">Download DOCX</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Preview</h3>
-    {% set p = data.profile %}
-    <h1 style="font-size:32px;font-weight:700;margin:0 0 4px;color:#ffffff;">{{ p.name }}</h1>
+  {% set p = data.profile %}
+  <h1 style="font-size:32px;font-weight:700;margin:0 0 4px;">{{ p.name }}</h1>
     <p style="color:var(--ink-soft);font-size:18px;font-style:italic;margin:0 0 14px;letter-spacing:0.08em;">{{ p.title }}</p>
     <p style="color:var(--muted);font-size:13px;">{{ p.phone }} · {{ p.email }} · LinkedIn · {{ p.location }}</p>
 

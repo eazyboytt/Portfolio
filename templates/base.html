@@ -34,13 +34,6 @@
       <a href="resume.html" class="{% if template_name|default('') == 'resume.html' %}active{% endif %}">{{ icon('download', 16) }} Resume</a>
     </nav>
 
-    <div class="sidebar-resume">
-      <a href="{{ resume_docx_url|default('resume.docx') }}">
-        {{ icon('download', 16) }}
-        <span>Download Resume</span>
-      </a>
-    </div>
-
     <div class="sidebar-footer">
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
         <span class="icon-slot">{{ icon(request_theme == 'dark' and 'sun' or 'moon', 16) }}</span>

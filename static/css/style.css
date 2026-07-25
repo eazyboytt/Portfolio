@@ -208,37 +208,6 @@ h1, h2, h3, .display { font-weight: 400; }
   border-color: var(--border);
 }
 
-/* Sidebar resume action */
-.sidebar-resume {
-  margin-top: auto;
-  padding-top: 18px;
-  border-top: 1px solid var(--border);
-}
-
-.sidebar-resume a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 14px;
-  border-radius: var(--radius);
-  font-family: var(--font-meta);
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: white;
-  background: var(--ink);
-  border: 1px solid var(--ink);
-  text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-}
-
-.sidebar-resume a:hover {
-  transform: translateY(-1px);
-  background: var(--gold);
-  border-color: var(--gold);
-  color: white;
-}
-
 .sidebar-footer {
   display: flex;
   align-items: center;
