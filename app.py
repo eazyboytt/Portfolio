@@ -238,3 +238,25 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5678))
     debug = os.environ.get("FLASK_DEBUG", "0") == "1"
     app.run(host=host, port=port, debug=debug)
+
+
+def fmt_date(value, end=False):
+    if not value or str(value).lower() == "present":
+        return "PRESENT"
+    value = str(value).strip()
+    if " - " in value:
+        year = value.split(" - ", 1)[0].strip()
+        rest = value.split(" - ", 1)[1].strip()
+    else:
+        year = value
+        rest = ""
+    month = rest.split("/")[0].strip()
+    if year and month:
+        return f"{year} - {month}"
+    return value
+
+
+try:
+    app.add_template_filter(fmt_date, "fmt_date")
+except Exception:
+    pass
