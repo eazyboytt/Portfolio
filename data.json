@@ -116,11 +116,10 @@
   ],
   "education": [
     {
-      "school": "",
-      "degree": "",
-      "field": "",
-      "start": "",
-      "end": ""
+      "degree": "Bachelor of Science in Information Technology",
+      "school": "Pampanga State Agricultural University",
+      "start": "2020",
+      "end": "2024"
     }
   ]
 }
