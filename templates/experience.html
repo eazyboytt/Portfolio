@@ -21,7 +21,7 @@
             <h4>{{ e.role }}</h4>
             <p class="muted" style="margin: 3px 0 0; font-size: 12.5px;">{{ e.company }} · {{ e.location }}</p>
           </div>
-          <div class="timeline-meta">{{ e.start }} – {{ e.end or 'Present' }}</div>
+          <div class="timeline-meta">{{ e.start|fmt_date }} - {{ e.end|fmt_date(end=true) }}</div>
         </div>
         <ul>
           {% for a in e.achievements %}

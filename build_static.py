@@ -57,7 +57,36 @@ except Exception as e:
     resume_docx_url = '#'
     print('DOCX build failed:', e)
 
-# Make resume_docx_url available in all templates
+def fmt_date_range(start, end):
+    def fmt(part):
+        if not part or part.lower() == 'present':
+            return 'PRESENT'
+        part = str(part).strip()
+        if ' - ' in part:
+            part = part.split(' - ', 1)[1]
+        part = part.split('/')[0]
+        return part.strip()
+
+    s = fmt(start)
+    e = fmt(end) if end else 'PRESENT'
+    return f'{s} - {e}'
+
+def fmt_date(value, end=False):
+    if not value or str(value).lower() == "present":
+        return "PRESENT"
+    value = str(value).strip()
+    if " - " in value:
+        year = value.split(" - ", 1)[0].strip()
+        rest = value.split(" - ", 1)[1].strip()
+    else:
+        year = value
+        rest = ""
+    month = rest.split("/")[0].strip()
+    if year and month:
+        return f"{year} - {month}"
+    return value
+
+env.filters['fmt_date'] = fmt_date
 env.globals['resume_docx_url'] = resume_docx_url
 
 routes = {
