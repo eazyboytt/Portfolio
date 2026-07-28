@@ -5,87 +5,67 @@
 <div class="section">
   {% set p = data.profile %}
   <h1 style="font-size:32px;font-weight:700;margin:0 0 4px;">{{ p.name }}</h1>
-  <p style="color:var(--ink-soft);font-size:18px;font-style:italic;margin:0 0 14px;letter-spacing:0.08em;">{{ p.title }}</p>
-  <p style="color:var(--muted);font-size:13px;">{{ p.phone }} · {{ p.email }} · <a href="{{ p.linkedin }}" target="_blank">LinkedIn</a> · {{ p.location }}</p>
+    <p style="color:var(--ink-soft);font-size:18px;font-style:italic;margin:0 0 14px;letter-spacing:0.08em;">{{ p.title }}</p>
+    <p style="color:var(--muted);font-size:13px;">{{ p.phone }} · {{ p.email }} · LinkedIn · {{ p.location }}</p>
 
-  <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">PROFILE</h4>
-  <p>{{ p.summary }}</p>
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">PROFILE</h4>
+    <p>{{ p.summary }}</p>
 
-  <h4 class="section-header" style="margin-top: 28px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border);"><span style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.3em; color: var(--ink);">PROFESSIONAL EXPERIENCE</span></h4>
-  <div class="timeline des-section">
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">PROFESSIONAL EXPERIENCE</h4>
     {% for e in data.experience %}
-    <div class="timeline-item">
+    <div class="timeline-item" style="padding-bottom:18px;">
+      <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="timeline-header">
           <div>
-            <h4 class="timeline-title">{{ e.role }}</h4>
-            <p class="timeline-company">{{ e.company }} · {{ e.location }}</p>
+            <h4>{{ e.role }}</h4>
+            <p class="muted" style="margin:3px 0 0;font-size:12.5px;">{{ e.company }} · {{ e.location }}</p>
           </div>
           <div class="timeline-meta">{{ e.start|fmt_date }} - {{ e.end|fmt_date(end=true) }}</div>
         </div>
-        {% if e.achievements %}
-        <ul class="timeline-achievements">
+        <ul>
           {% for a in e.achievements %}
           <li>{{ a }}</li>
           {% endfor %}
         </ul>
-        {% endif %}
-        {% if e.tech %}
-        <div class="timeline-tags">
-          {% for t in e.tech %}
-          <span class="tag">{{ t }}</span>
-          {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">KEY SKILLS</h4>
+    <div class="skills-grid">
+      {% for s in data.skills %}
+      <div class="skill-tile">
+        <div class="skill-dot" style="background: {% if s.level == 'Advanced' %}#34d399; background-color: rgba(52,211,153,0.12); {% elif s.level == 'Intermediate' %}#f59e42; background-color: rgba(245,158,66,0.12); {% else %}#818cf8; background-color: rgba(129,140,248,0.12); {% endif %}"></div>
+        <div class="skill-tile-info">
+          <div class="skill-tile-name">{{ s.name }}</div>
+          <div class="skill-tile-level">{{ s.level }}</div>
         </div>
-        {% endif %}
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
 
-  <h4 class="section-header" style="margin-top: 28px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border);"><span style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.3em; color: var(--ink);">KEY SKILLS</span></h4>
-  <div class="skills-grid des-section" style="gap: 16px; padding: 22px; border-radius: 14px;">
-    {% for s in data.skills %}
-    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--panel); border: 1px solid var(--border); border-radius: 10px;">
-      <div style="width: 10px; height: 10px; border-radius: 50%; background: {% if s.level == 'Advanced' %}#34d399{% elif s.level == 'Intermediate' %}#f59e42{% else %}#818cf8{% endif %};"></div>
-      <div>
-        <div style="font-weight: 500; color: var(--ink); font-size: 14px;">{{ s.name }}</div>
-        <div style="font-family: var(--font-meta); font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">{{ s.level }}</div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-
-  <h4 class="section-header" style="margin-top: 28px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border);"><span style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.3em; color: var(--ink);">EDUCATION</span></h4>
-  <div class="des-section">
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">EDUCATION</h4>
     {% for e in data.education %}
       {% if e.school %}
-      <div style="padding: 16px; border-left: 3px solid var(--gold); background: var(--panel-2); margin-bottom: 12px; border-radius: 0 10px 10px 0;">
-        <h4 style="font-family: var(--font-display); font-size: 20px; letter-spacing: 0.15em; color: var(--ink); margin: 0;">{{ e.degree }}</h4>
-        <p style="font-family: var(--font-meta); font-size: 13px; color: var(--muted); letter-spacing: 0.1em; margin: 6px 0 0;">{{ e.start|fmt_date }} - {{ e.end|fmt_date(end=true) }} · {{ e.school }}</p>
+      <div class="timeline-content" style="margin-bottom: 10px;">
+        <h4>{{ e.degree }}</h4>
+        <p class="muted" style="margin:3px 0 0;font-size:12.5px;">{{ e.start|fmt_date }} - {{ e.end|fmt_date(end=true) }} · {{ e.school }}</p>
       </div>
       {% endif %}
     {% endfor %}
-  </div>
 
-  <h4 class="section-header" style="margin-top: 28px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border);"><span style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.3em; color: var(--ink);">CERTIFICATIONS</span></h4>
-  <div class="des-section">
+    <h4 style="border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; margin-bottom: 10px; color: var(--accent-2);">CERTIFICATIONS</h4>
     {% if data.certifications %}
       {% for c in data.certifications %}
-      <div style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <div style="font-weight: 500; color: var(--ink);">{{ c.name }}</div>
-          <div style="font-family: var(--font-meta); font-size: 12px; color: var(--muted); letter-spacing: 0.08em;">{{ c.issuer }}</div>
-        </div>
-        {% if c.status %}
-        <span style="font-family: var(--font-meta); font-size: 11px; color: var(--green); text-transform: uppercase;">{{ c.status }}</span>
-        {% endif %}
+      <div class="timeline-content" style="margin-bottom: 10px;">
+        <h4>{{ c.name }}</h4>
+        <p class="muted" style="margin:3px 0 0;font-size:12.5px;">{{ c.issuer }} {% if c.date %}· {{ c.date }}{% endif %} {% if c.status %}· {{ c.status }}{% endif %}</p>
       </div>
       {% endfor %}
     {% else %}
       <p class="muted">No certifications listed yet.</p>
     {% endif %}
   </div>
-
-  <a href="{{ resume_docx_url }}" class="btn primary" style="margin-top: 28px; display: inline-block;">Download Resume</a>
 </div>
 {% endblock %}
