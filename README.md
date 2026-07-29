@@ -1,10 +1,10 @@
-# 🧠 Second Brain — Career Vault
+# Second Brain — Career Vault
 
 **Local web app for managing your profile, skills, experience, projects, and resume DOCX export.**
 
-- **Location:** `C:\Users\eazyboytt\second-brain\`
+- **Location:** `C:\\Users\\eazyboytt\\second-brain\\`
 - **URL:** http://127.0.0.1:5678
-- **Data file:** `C:\Users\eazyboytt\second-brain\data.json`
+- **Data file:** `C:\\Users\\eazyboytt\\second-brain\\data.json`
 - **Stack:** Flask 3.1 + python-docx 1.2 + Jinja2 templates
 - **Python:** 3.11 (venv at `.venv/`)
 
@@ -37,7 +37,7 @@ uv pip install flask python-docx
 | `/skills` | Skills list with level + evidence |
 | `/experience` | Work history + achievements |
 | `/projects` | Projects with impact + tech stack |
-| `/resume` | Resume preview + **Download DOCX** |
+| `/resume` | Resume preview + download DOCX |
 | `/api/resume/docx` | DOCX export endpoint |
 
 ---
@@ -119,7 +119,7 @@ Edit `data.json` directly — the app reloads on every request, so changes are l
 
 - Header: Name, title, company, location, email, phone
 - Sections: Summary, Skills (table), Experience, Projects, Education
-- Trigger: `/resume` page → **Download Resume (DOCX)**
+- Trigger: `/resume` page → download DOCX
 - Generated with `python-docx`, in-memory zip, no temp files
 
 ---
@@ -143,7 +143,7 @@ Copy-Item "C:\Users\eazyboytt\second-brain\data.json" "C:\Users\eazyboytt\OneDri
 - App is **local-only** by design — no cloud sync, no auth
 - Change port in `app.py` line `app.run(host="127.0.0.1", port=5678, ...)`
 - Dark theme via CSS custom properties — easy to reskin in `static/css/style.css`
-- Credentials rule: any new skill discovered in conversation is auto-added to `data.json`
+- Auto-add new skills discovered in conversation to `data.json`
 
 ---
 
