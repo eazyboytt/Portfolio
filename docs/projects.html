@@ -63,6 +63,14 @@
     </div>
   </aside>
 
+  <!-- Video Background (optional, hidden by default) -->
+  <div class="video-bg" id="video-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; opacity: 0; transition: opacity 0.5s ease;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+      <source src="static/videos/hero-bg.mp4" type="video/mp4">
+      <!-- Fallback to static background -->
+    </video>
+  </div>
+
   <main class="main">
     
 <div class="section">
@@ -74,9 +82,19 @@
     <div class="section-meta">4 projects</div>
   </div>
 
+  <!-- Filter Buttons -->
+  <div class="project-filters" style="margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 10px;">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Microsoft 365">Microsoft 365</button>
+    <button class="filter-btn" data-filter="VPN">VPN</button>
+    <button class="filter-btn" data-filter="PowerShell">PowerShell</button>
+    <button class="filter-btn" data-filter="Network">Network</button>
+    <button class="filter-btn" data-filter="Automation">Automation</button>
+  </div>
+
   <div class="projects-grid">
     
-    <div class="project-card">
+    <div class="project-card" data-tech="Exchange OneDrive Teams">
       <div class="project-header">
         <div class="project-icon">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
@@ -89,7 +107,7 @@
         <strong>Impact:</strong> Reduced follow-up tickets by streamlining mailbox and OneDrive access requests.
       </div>
       
-      <div class="timeline-tags" style="margin-top: 12px;">
+      <div class="project-tech" style="margin-top: 12px;">
         
         <span class="tag">Exchange</span>
         
@@ -101,7 +119,7 @@
       
     </div>
     
-    <div class="project-card">
+    <div class="project-card" data-tech="OpenVPN GlobalProtect RDP">
       <div class="project-header">
         <div class="project-icon">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
@@ -114,7 +132,7 @@
         <strong>Impact:</strong> Enabled secure remote access for multiple LGS staff across floors.
       </div>
       
-      <div class="timeline-tags" style="margin-top: 12px;">
+      <div class="project-tech" style="margin-top: 12px;">
         
         <span class="tag">OpenVPN</span>
         
@@ -126,7 +144,7 @@
       
     </div>
     
-    <div class="project-card">
+    <div class="project-card" data-tech="PowerShell Exchange Online IMAP Microsoft 365">
       <div class="project-header">
         <div class="project-icon">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
@@ -139,7 +157,7 @@
         <strong>Impact:</strong> Reduced manual migration effort and mailbox cutover errors through PowerShell automation.
       </div>
       
-      <div class="timeline-tags" style="margin-top: 12px;">
+      <div class="project-tech" style="margin-top: 12px;">
         
         <span class="tag">PowerShell</span>
         
@@ -153,7 +171,7 @@
       
     </div>
     
-    <div class="project-card">
+    <div class="project-card" data-tech="ServiceNow Excel/CSV Teams">
       <div class="project-header">
         <div class="project-icon">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
@@ -166,7 +184,7 @@
         <strong>Impact:</strong> Keeps queue clean and SLA-visible with consistent status discipline.
       </div>
       
-      <div class="timeline-tags" style="margin-top: 12px;">
+      <div class="project-tech" style="margin-top: 12px;">
         
         <span class="tag">ServiceNow</span>
         
@@ -180,6 +198,76 @@
     
   </div>
 </div>
+
+<style>
+.project-filters { margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+.filter-btn {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.filter-btn:hover { border-color: var(--color-border-2); background: var(--color-panel-2); color: var(--color-ink); }
+.filter-btn.active { background: var(--color-ink); color: var(--color-bg); border-color: var(--color-ink); }
+
+.project-card {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.project-card.hidden { opacity: 0; transform: scale(0.95); pointer-events: none; position: absolute; }
+
+.project-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.project-icon { width: 32px; height: 32px; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-panel-2); display: flex; align-items: center; justify-content: center; }
+.project-icon svg { color: var(--color-gold); }
+.project-meta { font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); letter-spacing: 0.1em; }
+.project-title { font-family: var(--font-display); font-size: 22px; letter-spacing: 0.15em; color: var(--color-ink); margin: 0 0 8px; }
+.project-desc { color: var(--color-ink-soft); font-size: 14px; line-height: 1.5; margin-bottom: 8px; }
+.project-impact { color: var(--color-muted); font-size: 13px; margin-bottom: 8px; }
+.project-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: var(--color-panel-2);
+  color: var(--color-ink);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Update active button
+      filterButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const filter = this.dataset.filter;
+
+      projectCards.forEach(card => {
+        const tech = card.dataset.tech;
+        if (filter === 'all' || tech.toLowerCase().includes(filter.toLowerCase())) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+</script>
 
     <div class="footer">
       <span class="footer-logo-avatar">JG</span>
@@ -205,6 +293,16 @@
         if (stored) root.setAttribute('data-theme', stored);
       } catch (err) {}
     })();
+
+    // Enable video background
+    function enableVideoBackground() {
+      const videoBg = document.getElementById('video-bg');
+      if (videoBg) {
+        videoBg.style.opacity = '1';
+        const video = videoBg.querySelector('video');
+        if (video) video.play().catch(e => console.log('Video autoplay blocked'));
+      }
+    }
   </script>
 </body>
 </html>
