@@ -6,10 +6,20 @@
   <title>Projects - Jhansi Yeoj Gatus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="static/favicon.svg">
-  <link rel="stylesheet" href="static/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('preferred-theme');
+        if (theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
   
@@ -280,8 +290,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!btn) return;
       const key = 'preferred-theme';
       const root = document.documentElement;
-      const current = root.getAttribute('data-theme') || 'light';
-      const nextCurrent = current === 'dark' ? 'light' : 'dark';
       btn.addEventListener('click', () => {
         const isDark = root.getAttribute('data-theme') === 'dark';
         const next = isDark ? 'light' : 'dark';
@@ -290,19 +298,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       try {
         const stored = localStorage.getItem(key);
-        if (stored) root.setAttribute('data-theme', stored);
+        if (stored && stored !== root.getAttribute('data-theme')) {
+          root.setAttribute('data-theme', stored);
+        }
       } catch (err) {}
     })();
-
-    // Enable video background
-    function enableVideoBackground() {
-      const videoBg = document.getElementById('video-bg');
-      if (videoBg) {
-        videoBg.style.opacity = '1';
-        const video = videoBg.querySelector('video');
-        if (video) video.play().catch(e => console.log('Video autoplay blocked'));
-      }
-    }
   </script>
 </body>
 </html>
