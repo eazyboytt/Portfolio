@@ -2,52 +2,51 @@
   ============================================================================
   Portfolio Design System - style.css
   ============================================================================
-  Organized with consistent naming conventions:
+  Professional descent UI - subdued colors, cleaner backgrounds
   - Design tokens: --color-*, --font-*, --radius
   - Utility classes: .u-* prefix
   - Component classes: descriptive names
-  - Backward compatibility: old class names preserved
   ============================================================================
 */
 
 :root {
-  /* Color Palette */
-  --color-bg: #f4ead5;
-  --color-panel: #ede1c3;
-  --color-panel-2: #e6d6ad;
-  --color-panel-3: #d8c28e;
-  --color-border: #c9b88a;
-  --color-border-2: #b9a878;
+  /* Color Palette - Professional Descent */
+  --color-bg: #f8f9fa;
+  --color-panel: #ffffff;
+  --color-panel-2: #f1f3f5;
+  --color-panel-3: #e9ecef;
+  --color-border: #dee2e6;
+  --color-border-2: #ced4da;
 
   /* Text Colors */
-  --color-ink: #1a1710;
-  --color-ink-soft: #2b2520;
-  --color-muted: #6f6248;
-  --color-muted-soft: #9c8b6e;
+  --color-ink: #212529;
+  --color-ink-soft: #6c757d;
+  --color-muted: #6c757d;
+  --color-muted-soft: #868e96;
 
-  /* Accent Colors */
-  --color-gold: #dba33a;
-  --color-gold-dim: #b88a2a;
-  --color-accent: #1a6ff3;
-  --color-accent-hover: #124cb8;
-  --color-accent-soft: #dbe6ff;
-  --color-accent-border: #a8c5ff;
+  /* Accent Colors - Subdued */
+  --color-gold: #495057;
+  --color-gold-dim: #343a40;
+  --color-accent: #343a40;
+  --color-accent-hover: #212529;
+  --color-accent-soft: #e9ecef;
+  --color-accent-border: #dee2e6;
 
   /* Semantic Colors */
-  --color-red: #c05621;
-  --color-red-hover: #a34318;
-  --color-red-soft: #ffe0c7;
-  --color-green: #2f7e5f;
-  --color-green-soft: #d2eadb;
-  --color-purple: #6d3b9c;
-  --color-purple-soft: #e2ccea;
-  --color-accent-2: #dba33a;
-  --color-accent-border: #bf8f2a;
+  --color-red: #dc3545;
+  --color-red-hover: #c82333;
+  --color-red-soft: #f8d7da;
+  --color-green: #198754;
+  --color-green-soft: #d1e7dd;
+  --color-purple: #6f42c1;
+  --color-purple-soft: #e2e3ff;
+  --color-accent-2: #495057;
+  --color-accent-border: #ced4da;
 
   /* DES High-Contrast Tokens */
-  --color-des-black: #000000;
+  --color-des-black: #212529;
   --color-des-white: #ffffff;
-  --color-des-accent: #1a6ff3;
+  --color-des-accent: #343a40;
 
   /* Typography */
   --font-display: 'Bebas Neue', 'Inter', system-ui, sans-serif;
@@ -55,37 +54,37 @@
   --font-meta: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
 
   /* Spacing & Sizing */
-  --radius: 10px;
+  --radius: 8px;
 }
 
 [data-theme='dark'] {
-  --color-bg: #0f1510;
-  --color-panel: #131a15;
-  --color-panel-2: #17201a;
-  --color-panel-3: #1c271f;
-  --color-border: #273425;
-  --color-border-2: #32412d;
+  --color-bg: #121212;
+  --color-panel: #1e1e1e;
+  --color-panel-2: #252525;
+  --color-panel-3: #2d2d2d;
+  --color-border: #333333;
+  --color-border-2: #404040;
 
-  --color-ink: #f4ead5;
-  --color-ink-soft: #d6c798;
-  --color-muted: #a89e74;
-  --color-muted-soft: #7a7259;
+  --color-ink: #e0e0e0;
+  --color-ink-soft: #b0b0b0;
+  --color-muted: #b0b0b0;
+  --color-muted-soft: #8c8c8c;
 
-  --color-gold: #e3b44b;
-  --color-gold-dim: #cf9b2b;
-  --color-accent: #5a8aff;
-  --color-accent-hover: #7aa8ff;
-  --color-accent-soft: #243b5e;
-  --color-accent-border: #2d4a6e;
+  --color-gold: #5a5a5a;
+  --color-gold-dim: #4a4a4a;
+  --color-accent: #5a5a5a;
+  --color-accent-hover: #e0e0e0;
+  --color-accent-soft: #2a2a2a;
+  --color-accent-border: #404040;
 
-  --color-red: #ff7f4d;
-  --color-red-hover: #ff9e73;
-  --color-red-soft: #2c1b11;
+  --color-red: #ff6b6b;
+  --color-red-hover: #ff8c8c;
+  --color-red-soft: #2a1a1a;
 
-  --color-green: #4de09b;
-  --color-green-soft: #122a1d;
-  --color-purple: #b973e8;
-  --color-purple-soft: #241430;
+  --color-green: #69db7c;
+  --color-green-soft: #1a2a1a;
+  --color-purple: #b570d6;
+  --color-purple-soft: #2a1a30;
 }
 
 /* Global Reset */
@@ -98,12 +97,10 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.7;
-  background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
-  background-size: 22px 22px;
 }
 
 [data-theme='dark'] body {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background: linear-gradient(135deg, #0f0f23 0%, #121212 100%);
 }
 
 /* Typography */
@@ -116,15 +113,21 @@ h1, h2, h3, .display { font-weight: 400; }
 .main { margin-left: 280px; padding: 38px 44px 108px; position: relative; z-index: 1; max-width: 1120px; }
 .section { margin-bottom: 28px; }
 
-/* Section Block */
+/* Section Block - Transparent/translucent look */
 .section-block {
-  background: var(--color-panel);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 22px 24px;
   margin-bottom: 20px;
+  backdrop-filter: blur(10px);
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
+
+[data-theme='dark'] .section-block {
+  background: rgba(30, 30, 30, 0.95);
+}
+
 .section-block:hover { border-color: var(--color-border-2); transform: translateY(-1px); }
 
 .section-header {
@@ -134,18 +137,25 @@ h1, h2, h3, .display { font-weight: 400; }
 .section-header h2 { font-family: var(--font-display); font-size: 34px; letter-spacing: 0.35em; color: var(--color-ink); }
 .section-meta { font-family: var(--font-meta); font-size: 13px; color: var(--color-muted); letter-spacing: 0.2em; text-transform: uppercase; }
 
-/* Sidebar */
+/* Sidebar - Subtle */
 .sidebar {
   position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
-  background: var(--color-panel); border-right: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.95);
+  border-right: 1px solid var(--color-border);
   padding: 28px 24px 24px; display: flex; flex-direction: column; gap: 18px; z-index: 20; overflow-y: auto;
+  backdrop-filter: blur(10px);
 }
+
+[data-theme='dark'] .sidebar {
+  background: rgba(30, 30, 30, 0.95);
+}
+
 .sidebar-brand { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; padding-bottom: 22px; border-bottom: 1px solid var(--color-border); }
 .sidebar-avatar {
   width: 52px; height: 52px; border-radius: 14px;
-  background: linear-gradient(140deg, var(--color-gold), #f1b25c); color: white;
-  font-family: var(--font-display); font-size: 20px; letter-spacing: 0.2em;
-  display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-gold-dim);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  color: white; font-family: var(--font-display); font-size: 20px; letter-spacing: 0.2em;
+  display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border);
 }
 .sidebar-name { font-family: var(--font-body); font-weight: 600; font-size: 17px; color: var(--color-ink); }
 .sidebar-title { font-family: var(--font-meta); font-size: 11.5px; color: var(--color-muted); margin-top: 4px; letter-spacing: 0.15em; text-transform: uppercase; }
@@ -181,14 +191,15 @@ h1, h2, h3, .display { font-weight: 400; }
 
 /* Buttons */
 .btn {
-  display: inline-flex; align-items: center; gap: 10px; padding: 11px 18px; background: transparent; color: var(--color-ink);
-  text-decoration: none; border: 1px solid var(--color-border); border-radius: var(--radius);
-  font-family: var(--font-meta); font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px; padding: 11px 18px; background: transparent;
+  color: var(--color-ink); text-decoration: none; border: 1px solid var(--color-border);
+  border-radius: var(--radius); font-family: var(--font-meta); font-size: 13px;
+  letter-spacing: 0.15em; text-transform: uppercase;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 .btn:hover { border-color: var(--color-border-2); background: var(--color-panel-2); transform: translateY(-1px); }
 .btn .primary { background: var(--color-ink); color: var(--color-bg); border-color: var(--color-ink); font-weight: 500; }
-.btn .primary:hover { background: var(--color-gold); border-color: var(--color-gold); color: white; }
+.btn .primary:hover { background: var(--color-accent); border-color: var(--color-accent); color: white; }
 .btn .ghost { border-color: transparent; }
 .btn .ghost:hover { border-color: var(--color-border); }
 
@@ -206,8 +217,9 @@ h1, h2, h3, .display { font-weight: 400; }
 /* Skills Grid */
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .skill-tile {
-  background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 14px 16px;
-  display: flex; align-items: center; gap: 14px; transition: border-color 0.25s ease, transform 0.2s ease, background 0.25s ease;
+  background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius);
+  padding: 14px 16px; display: flex; align-items: center; gap: 14px;
+  transition: border-color 0.25s ease, transform 0.2s ease, background 0.25s ease;
 }
 .skill-tile:hover { border-color: var(--color-border-2); transform: translateY(-1px); background: var(--color-panel-2); }
 .skill-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
@@ -251,7 +263,7 @@ h1, h2, h3, .display { font-weight: 400; }
   z-index: 5; display: flex; align-items: center; gap: 10px;
 }
 .footer-logo-avatar {
-  width: 26px; height: 26px; background: linear-gradient(140deg, var(--color-gold), #f1b25c);
+  width: 26px; height: 26px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
   border-radius: 8px; display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 14px; font-weight: 700; color: white;
 }
@@ -285,6 +297,13 @@ h1, h2, h3, .display { font-weight: 400; }
   text-transform: uppercase; color: var(--color-des-black); background: transparent; margin-left: 8px; vertical-align: middle;
 }
 .badge-new:hover { background: var(--color-des-black); color: var(--color-des-white); }
+
+/* Video Background - Hidden by default */
+.video-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+  overflow: hidden; opacity: 0; transition: opacity 0.5s ease; pointer-events: none;
+}
+.video-bg video { width: 100%; height: 100%; object-fit: cover; }
 
 /* Mobile Responsive */
 @media (max-width: 900px) {
