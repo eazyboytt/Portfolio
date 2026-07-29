@@ -79,11 +79,11 @@
     <span class="section-num">( 01 )</span>
   </div>
 
-  <div class="card" style="padding: 24px;">
+  <div style="border: 1px solid var(--color-border); border-radius: 12px; padding: 12px; background: var(--color-panel);">
     <div style="display:flex; gap: 18px; align-items:start; flex-wrap: wrap;">
       <div style="flex: 1 1 300px;">
-        <h3 style="margin-bottom: 10px; font-size: 20px;">Who I am</h3>
-        <p>IT Support with hands-on experience in end-to-end service delivery, network infrastructure administration, Microsoft 365/Azure support, VPN/remote access, SDN multi-site management, web filtering, and email migration automation. Proven ability to support cross-team operations, onboard users, and turn ad-hoc requests into repeatable IT support processes.</p>
+        <h3 style="margin-bottom: 10px; font-size: 20px; font-family: var(--font-body); color: var(--color-ink);">Who I am</h3>
+        <p style="color: var(--color-ink);">IT Support with hands-on experience in end-to-end service delivery, network infrastructure administration, Microsoft 365/Azure support, VPN/remote access, SDN multi-site management, web filtering, and email migration automation. Proven ability to support cross-team operations, onboard users, and turn ad-hoc requests into repeatable IT support processes.</p>
         <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
           <a href="mailto:jhansiyeojgatus10@gmail.com" class="btn primary" style="font-size: 12px; padding: 8px 14px;">Contact Me</a>
         </div>
@@ -91,57 +91,65 @@
       <div style="display:flex; gap: 10px; flex-wrap: wrap; flex: 1 1 280px;">
         
         
-        <div style="flex:1; min-width: 140px;" class="project-card">
-          <div class="project-title" style="font-size:14px; margin-bottom:4px;">Latest Project</div>
-          <p class="project-desc" style="font-size:12.5px; margin: 0;">M365 Migration &amp; Access Remediation</p>
+        <div style="flex:1; min-width: 140px; background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 12px; padding: 18px;">
+          <div style="font-family: var(--font-display); font-size: 13px; letter-spacing: 0.18em; color: var(--color-muted); text-transform: uppercase; margin-bottom: 8px;">Latest Project</div>
+          <p style="font-weight: 500; color: var(--color-ink); margin: 0;">M365 Migration &amp; Access Remediation</p>
+          <p style="font-size: 12px; color: var(--color-muted); margin: 6px 0 0;">2026-06</p>
         </div>
         
       </div>
     </div>
   </div>
 
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-value">16</div>
-      <div class="stat-label">Technologies</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">1</div>
-      <div class="stat-label">Roles</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">4</div>
-      <div class="stat-label">Projects</div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-top: 18px;">
-    <h3 style="margin-bottom: 10px; font-size: 18px;">Quick Facts</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px;">
+  <!-- Stats + Quick Facts composed block -->
+  <div style="margin-top: 20px; border: 1px solid var(--color-border); border-radius: 12px; padding: 20px 22px; background: var(--color-panel);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px 28px; align-items: start;">
       <div>
-        <p style="color: var(--color-muted); font-size: 11px; font-family: var(--font-meta); text-transform: uppercase; letter-spacing: 0.4px;">Focus</p>
-        <p style="font-weight: 500;">IT Support & Operations</p>
+        <div style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.35em; color: var(--color-ink); text-transform: uppercase; margin-bottom: 14px;">Stats</div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <div style="font-family: var(--font-meta); font-size: 24px; font-weight: 600; color: var(--color-ink);">16</div>
+            <div style="font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;">Technologies</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-meta); font-size: 24px; font-weight: 600; color: var(--color-ink);">1</div>
+            <div style="font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;">Roles</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-meta); font-size: 24px; font-weight: 600; color: var(--color-ink);">4</div>
+            <div style="font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;">Projects</div>
+          </div>
+        </div>
       </div>
       <div>
-        <p style="color: var(--color-muted); font-size: 11px; font-family: var(--font-meta); text-transform: uppercase; letter-spacing: 0.4px;">Company</p>
-        <p style="font-weight: 500;">PRTNA Outsourcing Corporation (StrataStaff)</p>
-      </div>
-      <div>
-        <p style="color: var(--color-muted); font-size: 11px; font-family: var(--font-meta); text-transform: uppercase; letter-spacing: 0.4px;">Status</p>
-        <p style="font-weight: 500; color: #059669;">Available for opportunities</p>
+        <div style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.35em; color: var(--color-ink); text-transform: uppercase; margin-bottom: 14px;">Quick Facts</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px 18px;">
+          <div>
+            <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px;">Focus</div>
+            <div style="font-weight: 500; color: var(--color-ink); font-size: 14px;">IT Support & Operations</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px;">Company</div>
+            <div style="font-weight: 500; color: var(--color-ink); font-size: 14px;">PRTNA Outsourcing Corporation (StrataStaff)</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px;">Status</div>
+            <div style="font-weight: 500; color: #15803d; font-size: 14px;">Available for opportunities</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Testimonial Carousel -->
   <div class="section" style="margin-top: 36px;">
-    <h3 style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.3em; color: var(--color-ink); margin-bottom: 22px; border-bottom: 1px solid var(--color-border); padding-bottom: 12px;">Testimonials</h3>
+    <h3 style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.3em; color: var(--color-ink); margin-bottom: 22px; border-bottom: 1px solid var(--color-border); padding-bottom: 12px; text-transform: uppercase;">Testimonials</h3>
     <div class="testimonial-carousel" style="position: relative; overflow: hidden;">
       <div class="testimonial-track" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 16px 0;">
         <div class="testimonial" style="flex: 0 0 320px; background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 22px; scroll-snap-align: start;">
           <p style="font-style: italic; color: var(--color-ink); line-height: 1.6; margin-bottom: 16px;">"Jhansi consistently resolves complex IT issues with minimal downtime. The email migration scripts saved us countless hours."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(140deg, var(--color-gold), #f1b25c); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 18px; font-weight: 700; color: white;">MT</div>
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(140deg, var(--color-accent), var(--color-accent-hover)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 18px; font-weight: 700; color: white;">MT</div>
             <div>
               <div style="font-weight: 500; color: var(--color-ink);">Maria Torres</div>
               <div style="font-size: 12px; color: var(--color-muted); font-family: var(--font-meta);">IT Manager, Client A</div>
@@ -151,7 +159,7 @@
         <div class="testimonial" style="flex: 0 0 320px; background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 22px; scroll-snap-align: start;">
           <p style="font-style: italic; color: var(--color-ink); line-height: 1.6; margin-bottom: 16px;">"Excellent support during our M365 migration. The documentation and handoff were thorough and professional."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(140deg, var(--color-gold), #f1b25c); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 18px; font-weight: 700; color: white;">JS</div>
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(140deg, var(--color-accent), var(--color-accent-hover)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 18px; font-weight: 700; color: white;">JS</div>
             <div>
               <div style="font-weight: 500; color: var(--color-ink);">Juan Santos</div>
               <div style="font-size: 12px; color: var(--color-muted); font-family: var(--font-meta);">Network Admin, Client B</div>
