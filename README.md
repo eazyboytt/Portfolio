@@ -2,9 +2,8 @@
 
 **Local web app for managing your profile, skills, experience, projects, and resume DOCX export.**
 
-- **Location:** `C:\\Users\\eazyboytt\\second-brain\\`
-- **URL:** http://127.0.0.1:5678
-- **Data file:** `C:\\Users\\eazyboytt\\second-brain\\data.json`
+- **Location:** `C:\Users\eazyboytt\second-brain\`
+- **Data file:** `C:\Users\eazyboytt\second-brain\data.json`
 - **Stack:** Flask 3.1 + python-docx 1.2 + Jinja2 templates
 - **Python:** 3.11 (venv at `.venv/`)
 
