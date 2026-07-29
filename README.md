@@ -1,3 +1,3 @@
 # Second Brain — Career Vault
 
-**Live site:** https://eazyboytt.github.io/Portfolio/
+**Live site:** https://jhansi-yeoj.vercel.app/
