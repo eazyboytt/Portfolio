@@ -63,6 +63,14 @@
     </div>
   </aside>
 
+  <!-- Video Background (optional, hidden by default) -->
+  <div class="video-bg" id="video-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; opacity: 0; transition: opacity 0.5s ease;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+      <source src="static/videos/hero-bg.mp4" type="video/mp4">
+      <!-- Fallback to static background -->
+    </video>
+  </div>
+
   <main class="main">
     
 <div class="section">
@@ -77,7 +85,7 @@
   <div class="skills-grid">
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #34d399; background-color: rgba(52,211,153,0.12); "></div>
+      <div class="skill-dot" style="background: #34d399; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">IT Onboarding &amp; User Support</div>
         <div class="skill-tile-level">Advanced</div>
@@ -85,7 +93,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #34d399; background-color: rgba(52,211,153,0.12); "></div>
+      <div class="skill-dot" style="background: #34d399; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Network Infrastructure Administration</div>
         <div class="skill-tile-level">Advanced</div>
@@ -93,7 +101,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #34d399; background-color: rgba(52,211,153,0.12); "></div>
+      <div class="skill-dot" style="background: #34d399; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">End-User &amp; Technical Support</div>
         <div class="skill-tile-level">Advanced</div>
@@ -101,7 +109,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">TP-Link Omada SDN &amp; Multi-Site Administration</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -109,7 +117,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Network Security &amp; Web Filtering</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -117,7 +125,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Client &amp; IT Coordination</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -125,7 +133,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Microsoft Azure Administration</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -133,7 +141,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">cPanel &amp; Web Hosting Support</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -141,7 +149,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Email Migration Automation</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -149,7 +157,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #34d399; background-color: rgba(52,211,153,0.12); "></div>
+      <div class="skill-dot" style="background: #34d399; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Microsoft 365 / Exchange</div>
         <div class="skill-tile-level">Advanced</div>
@@ -157,7 +165,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #34d399; background-color: rgba(52,211,153,0.12); "></div>
+      <div class="skill-dot" style="background: #34d399; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Windows Administration</div>
         <div class="skill-tile-level">Advanced</div>
@@ -165,7 +173,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #34d399; background-color: rgba(52,211,153,0.12); "></div>
+      <div class="skill-dot" style="background: #34d399; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">VPN &amp; Remote Access</div>
         <div class="skill-tile-level">Advanced</div>
@@ -173,7 +181,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #34d399; background-color: rgba(52,211,153,0.12); "></div>
+      <div class="skill-dot" style="background: #34d399; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Networking</div>
         <div class="skill-tile-level">Advanced</div>
@@ -181,7 +189,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">ServiceNow / Ticketing</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -189,7 +197,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Application Support</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -197,7 +205,7 @@
     </div>
     
     <div class="skill-tile">
-      <div class="skill-dot" style="background: #f59e42; background-color: rgba(245,158,66,0.12); "></div>
+      <div class="skill-dot" style="background: #f59e42; "></div>
       <div class="skill-tile-info">
         <div class="skill-tile-name">Automation / Scripting</div>
         <div class="skill-tile-level">Intermediate</div>
@@ -205,7 +213,192 @@
     </div>
     
   </div>
+
+  <!-- Animated Progress Bars Section -->
+  <div class="section" style="margin-top: 40px;">
+    <h3 style="font-family: var(--font-display); font-size: 24px; letter-spacing: 0.15em; color: var(--color-ink); margin-bottom: 22px; border-bottom: 1px solid var(--color-border); padding-bottom: 12px;">Proficiency Levels</h3>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">IT Onboarding &amp; User Support</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Advanced</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="100" style="width: 0%; background: #34d399; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Network Infrastructure Administration</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Advanced</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="100" style="width: 0%; background: #34d399; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">End-User &amp; Technical Support</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Advanced</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="100" style="width: 0%; background: #34d399; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">TP-Link Omada SDN &amp; Multi-Site Administration</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Network Security &amp; Web Filtering</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Client &amp; IT Coordination</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Microsoft Azure Administration</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">cPanel &amp; Web Hosting Support</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Email Migration Automation</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Microsoft 365 / Exchange</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Advanced</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="100" style="width: 0%; background: #34d399; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Windows Administration</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Advanced</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="100" style="width: 0%; background: #34d399; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">VPN &amp; Remote Access</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Advanced</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="100" style="width: 0%; background: #34d399; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Networking</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Advanced</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="100" style="width: 0%; background: #34d399; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">ServiceNow / Ticketing</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Application Support</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: var(--font-body); color: var(--color-ink); font-weight: 500;">Automation / Scripting</span>
+        <span style="font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); text-transform: uppercase;">Intermediate</span>
+      </div>
+      <div style="background: var(--color-panel-2); border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 12px;">
+        <div class="skill-bar" data-level="75" style="width: 0%; background: #f59e42; ; height: 100%; transition: width 1.2s ease-out;"></div>
+      </div>
+    </div>
+    
+  </div>
 </div>
+
+<style>
+.skill-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.skill-tile-info { display: flex; flex-direction: column; }
+.skill-tile-name { font-weight: 500; color: var(--color-ink); font-size: 14px; }
+.skill-tile-level { font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const bars = document.querySelectorAll('.skill-bar');
+  bars.forEach(bar => {
+    const level = bar.dataset.level;
+    setTimeout(() => {
+      bar.style.width = level + '%';
+    }, 100);
+  });
+});
+</script>
 
     <div class="footer">
       <span class="footer-logo-avatar">JG</span>
@@ -231,6 +424,16 @@
         if (stored) root.setAttribute('data-theme', stored);
       } catch (err) {}
     })();
+
+    // Enable video background
+    function enableVideoBackground() {
+      const videoBg = document.getElementById('video-bg');
+      if (videoBg) {
+        videoBg.style.opacity = '1';
+        const video = videoBg.querySelector('video');
+        if (video) video.play().catch(e => console.log('Video autoplay blocked'));
+      }
+    }
   </script>
 </body>
 </html>
