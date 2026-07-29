@@ -58,24 +58,24 @@
 }
 
 [data-theme='dark'] {
-  --color-bg: #121212;
-  --color-panel: #1e1e1e;
-  --color-panel-2: #252525;
-  --color-panel-3: #2d2d2d;
-  --color-border: #333333;
-  --color-border-2: #404040;
+  --color-bg: #0a0a0a;
+  --color-panel: #181818;
+  --color-panel-2: #242424;
+  --color-panel-3: #2a2a2a;
+  --color-border: #3a3a3a;
+  --color-border-2: #4a4a4a;
 
-  --color-ink: #e0e0e0;
-  --color-ink-soft: #b0b0b0;
-  --color-muted: #b0b0b0;
-  --color-muted-soft: #8c8c8c;
+  --color-ink: #f0f0f0;
+  --color-ink-soft: #c0c0c0;
+  --color-muted: #a0a0a0;
+  --color-muted-soft: #8a8a8a;
 
-  --color-gold: #5a5a5a;
-  --color-gold-dim: #4a4a4a;
+  --color-gold: #8a8a8a;
+  --color-gold-dim: #6a6a6a;
   --color-accent: #5a5a5a;
   --color-accent-hover: #e0e0e0;
-  --color-accent-soft: #2a2a2a;
-  --color-accent-border: #404040;
+  --color-accent-soft: #1a1a1a;
+  --color-accent-border: #3a3a3a;
 
   --color-red: #ff6b6b;
   --color-red-hover: #ff8c8c;
@@ -285,6 +285,21 @@ h1, h2, h3, .display { font-weight: 400; }
 .des-section .timeline-meta { font-family: var(--font-meta); font-size: 13px; color: var(--color-muted); letter-spacing: 0.1em; }
 .des-section .timeline-achievements { margin-top: 12px; padding-left: 18px; }
 .des-section .timeline-achievements li { margin: 6px 0; color: var(--color-ink); line-height: 1.5; }
+
+/* DES Section Dark Mode */
+[data-theme='dark'] .des-section {
+  background: #1a1a1a; color: #f0f0f0;
+  border: 1px solid #4a4a4a;
+}
+[data-theme='dark'] .des-section .section-header { border-bottom: 1px solid #4a4a4a; }
+[data-theme='dark'] .des-section h2 { color: #f0f0f0; }
+[data-theme='dark'] .des-section .timeline-item { border-bottom: 1px solid #3a3a3a; }
+[data-theme='dark'] .des-section .timeline-title { color: #f0f0f0; }
+[data-theme='dark'] .des-section .timeline-company { color: #a0a0a0; }
+[data-theme='dark'] .des-section .timeline-meta { color: #a0a0a0; }
+[data-theme='dark'] .des-section .timeline-achievements li { color: #f0f0f0; }
+[data-theme='dark'] .badge-new { border: 1px solid #f0f0f0; color: #f0f0f0; }
+[data-theme='dark'] .badge-new:hover { background: #f0f0f0; color: #0a0a0a; }
 
 /* Two-Column Grid */
 .u-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
