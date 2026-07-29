@@ -30,42 +30,21 @@
     </div>
   </div>
 
-  <!-- Stats + Quick Facts composed block -->
-  <div style="margin-top: 20px; border: 1px solid var(--color-border); border-radius: 12px; padding: 20px 22px; background: var(--color-panel);">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px 28px; align-items: start;">
+  <!-- Quick Facts -->
+  <div style="margin-top: 20px; border: 1px solid var(--color-border); border-radius: 12px; padding: 22px 26px; background: var(--color-panel);">
+    <div style="font-family: var(--font-display); font-size: 22px; letter-spacing: 0.35em; color: var(--color-ink); text-transform: uppercase; margin-bottom: 18px;">Quick Facts</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px 22px;">
       <div>
-        <div style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.35em; color: var(--color-ink); text-transform: uppercase; margin-bottom: 14px;">Stats</div>
-        <div style="display: flex; flex-direction: column; gap: 14px;">
-          <div>
-            <div style="font-family: var(--font-meta); font-size: 24px; font-weight: 600; color: var(--color-ink);">{{ data.skills|length }}</div>
-            <div style="font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;">Technologies</div>
-          </div>
-          <div>
-            <div style="font-family: var(--font-meta); font-size: 24px; font-weight: 600; color: var(--color-ink);">{{ data.experience|length }}</div>
-            <div style="font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;">Roles</div>
-          </div>
-          <div>
-            <div style="font-family: var(--font-meta); font-size: 24px; font-weight: 600; color: var(--color-ink);">{{ data.projects|length }}</div>
-            <div style="font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;">Projects</div>
-          </div>
-        </div>
+        <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">Focus</div>
+        <div style="font-weight: 500; color: var(--color-ink);">IT Support &amp; Operations</div>
       </div>
       <div>
-        <div style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.35em; color: var(--color-ink); text-transform: uppercase; margin-bottom: 14px;">Quick Facts</div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px 18px;">
-          <div>
-            <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px;">Focus</div>
-            <div style="font-weight: 500; color: var(--color-ink); font-size: 14px;">IT Support & Operations</div>
-          </div>
-          <div>
-            <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px;">Company</div>
-            <div style="font-weight: 500; color: var(--color-ink); font-size: 14px;">{{ p.company }}</div>
-          </div>
-          <div>
-            <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px;">Status</div>
-            <div style="font-weight: 500; color: #15803d; font-size: 14px;">Available for opportunities</div>
-          </div>
-        </div>
+        <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">Company</div>
+        <div style="font-weight: 500; color: var(--color-ink);">{{ p.company }}</div>
+      </div>
+      <div>
+        <div style="font-family: var(--font-meta); font-size: 11px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">Status</div>
+        <div style="font-weight: 500; color: #15803d;">Available for opportunities</div>
       </div>
     </div>
   </div>
