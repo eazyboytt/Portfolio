@@ -23,6 +23,7 @@
 </head>
 <body>
   
+  <canvas id="bg-particles" aria-hidden="true"></canvas>
   <aside class="sidebar">
     
     <div class="sidebar-brand">
@@ -72,14 +73,6 @@
       <span>sys.online · 2026</span>
     </div>
   </aside>
-
-  <!-- Video Background (optional, hidden by default) -->
-  <div class="video-bg" id="video-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; opacity: 0; transition: opacity 0.5s ease;">
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
-      <source src="static/videos/hero-bg.mp4" type="video/mp4">
-      <!-- Fallback to static background -->
-    </video>
-  </div>
 
   <main class="main">
     
@@ -138,6 +131,7 @@
     </div>
   </main>
 
+  <script src="static/js/particles.js"></script>
   <script>
     (function() {
       const btn = document.getElementById('theme-toggle');

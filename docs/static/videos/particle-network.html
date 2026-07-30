@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle Network Background</title>
+  <script>p5.disableFriendlyErrors = true;</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<script>
+const CONFIG = {
+  particleCount: 100,
+  connectionDistance: 170,
+  particleSize: 2.0,
+  dotColor: [185, 190, 196],
+  lineColor: [26, 34, 51],
+  lineAlpha: 45,
+  bgColor: [244, 245, 247],
+  baseSpeed: 0.22,
+  noiseAmplitude: 0.35,
+  frames: 360
+};
+let particles = [];
+
+function setup() {
+  pixelDensity(1);
+  createCanvas(1920, 1080);
+  randomSeed(42);
+  noiseSeed(42);
+  noStroke();
+
+  for (let i = 0; i < CONFIG.particleCount; i++) {
+    particles.push({
+      x: random(width),
+      y: random(height),
+      phase: random(TWO_PI),
+      radius: random(60, 260),
+      speed: random(CONFIG.baseSpeed * 0.6, CONFIG.baseSpeed),
+      drift: random(0.6, 1.4),
+      size: random(CONFIG.particleSize * 0.8, CONFIG.particleSize * 1.3),
+      baseX: 0,
+      baseY: 0
+    });
+    particles[i].baseX = particles[i].x;
+    particles[i].baseY = particles[i].y;
+  }
+
+  frameRate(30);
+  noLoop();
+  window._p5Ready = true;
+}
+
+function draw() {
+  background(CONFIG.bgColor[0], CONFIG.bgColor[1], CONFIG.bgColor[2]);
+
+  const t = (frameCount % CONFIG.frames) / CONFIG.frames * TWO_PI;
+
+  for (let p of particles) {
+    const cx = p.baseX + Math.cos(t * p.drift + p.phase) * p.radius;
+    const cy = p.baseY + Math.sin(t * p.drift + p.phase) * p.radius;
+
+    p.x = (cx + width) % width;
+    p.y = (cy + height) % height;
+  }
+
+  stroke(CONFIG.lineColor[0], CONFIG.lineColor[1], CONFIG.lineColor[2], CONFIG.lineAlpha);
+  strokeWeight(0.5);
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const distSq = dx * dx + dy * dy;
+      const maxSq = CONFIG.connectionDistance * CONFIG.connectionDistance;
+      if (distSq < maxSq) {
+        const alpha = map(distSq, 0, maxSq, 38, 0);
+        stroke(CONFIG.lineColor[0], CONFIG.lineColor[1], CONFIG.lineColor[2], alpha);
+        line(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
+      }
+    }
+  }
+
+  noStroke();
+  fill(CONFIG.dotColor[0], CONFIG.dotColor[1], CONFIG.dotColor[2], 220);
+  for (let p of particles) {
+    ellipse(p.x, p.y, p.size, p.size);
+  }
+}
+
+function keyPressed() {
+  if (key === 's' || key === 'S') saveCanvas('particle-network', 'png');
+  if (key === 'g' || key === 'G') saveGif('particle-network', 5);
+  if (key === 'r' || key === 'R') {
+    randomSeed(millis());
+    noiseSeed(millis());
+  }
+}
+</script>
+</body>
+</html>
