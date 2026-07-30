@@ -141,6 +141,14 @@ h1, h2, h3, .display { font-weight: 400; }
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
+.surface {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
 [data-theme='dark'] .section-block {
   background: transparent;
 }
