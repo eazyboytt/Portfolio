@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle Network Background</title>
+  <script>p5.disableFriendlyErrors = true;</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<script>
+// === Configuration ===
+const CONFIG = {
+  seed: 42,
+  particleCount: 80,
+  connectionDistance: 180,
+  particleSize: 2.2,
+  dotColor: [180, 185, 190],
+  lineColor: [26, 34, 51],
+  lineAlpha: 35,
+  bgColor: [244, 245, 247],
+  speed: 0.18,
+  driftScale: 0.25
+};
+
+// === Global State ===
+let particles = [];
+let noiseOffset = 0;
+
+// === Setup ===
+function setup() {
+  pixelDensity(1);
+  createCanvas(1920, 1080);
+  randomSeed(CONFIG.seed);
+  noiseSeed(CONFIG.seed);
+  noStroke();
+
+  // Initialize particles
+  for (let i = 0; i < CONFIG.particleCount; i++) {
+    particles.push({
+      x: random(width),
+      y: random(height),
+      vx: random(-CONFIG.speed, CONFIG.speed),
+      vy: random(-CONFIG.speed, CONFIG.speed),
+      size: random(CONFIG.particleSize * 0.8, CONFIG.particleSize * 1.4)
+    });
+  }
+
+  frameRate(30);
+  noLoop();
+  window._p5Ready = true;
+}
+
+// === Draw Loop ===
+function draw() {
+  background(CONFIG.bgColor[0], CONFIG.bgColor[1], CONFIG.bgColor[2]);
+
+  // Update particles with gentle Perlin drift
+  noiseOffset += 0.002;
+  for (let p of particles) {
+    let angle = noise(p.x * 0.002, p.y * 0.002, noiseOffset) * TWO_PI * 2;
+    p.x += Math.cos(angle) * CONFIG.driftScale + p.vx;
+    p.y += Math.sin(angle) * CONFIG.driftScale + p.vy;
+
+    // Wrap around edges for smooth looping
+    if (p.x < -50) p.x = width + 50;
+    if (p.x > width + 50) p.x = -50;
+    if (p.y < -50) p.y = height + 50;
+    if (p.y > height + 50) p.y = -50;
+  }
+
+  // Draw connections
+  stroke(CONFIG.lineColor[0], CONFIG.lineColor[1], CONFIG.lineColor[2], CONFIG.lineAlpha);
+  strokeWeight(0.6);
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      let dx = particles[i].x - particles[j].x;
+      let dy = particles[i].y - particles[j].y;
+      let distSq = dx * dx + dy * dy;
+      if (distSq < CONFIG.connectionDistance * CONFIG.connectionDistance) {
+        let alpha = map(distSq, 0, CONFIG.connectionDistance * CONFIG.connectionDistance, CONFIG.lineAlpha, 0);
+        stroke(CONFIG.lineColor[0], CONFIG.lineColor[1], CONFIG.lineColor[2], alpha);
+        line(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
+      }
+    }
+  }
+
+  // Draw dots
+  noStroke();
+  fill(CONFIG.dotColor[0], CONFIG.dotColor[1], CONFIG.dotColor[2], 220);
+  for (let p of particles) {
+    ellipse(p.x, p.y, p.size, p.size);
+  }
+}
+
+// === Export Controls ===
+function keyPressed() {
+  if (key === 's' || key === 'S') saveCanvas('particle-network', 'png');
+  if (key === 'g' || key === 'G') saveGif('particle-network', 5);
+  if (key === 'r' || key === 'R') {
+    randomSeed(millis());
+    noiseSeed(millis());
+  }
+}
+</script>
+</body>
+</html>
