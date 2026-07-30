@@ -347,10 +347,12 @@ h1, h2, h3, .display { font-weight: 400; }
 .skill-tile-level { font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
 
 /* Timeline */
-.timeline { position: relative; padding-left: 40px; }
+.timeline { position: relative; padding-left: 40px; background: transparent; }
 .timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: var(--color-border); }
-.timeline-item { position: relative; padding-left: 28px; margin-bottom: 28px; }
+.timeline-item { position: relative; padding-left: 28px; margin-bottom: 28px; background: transparent; }
 .timeline-item:last-child { margin-bottom: 0; }
+
+.des-section { background: transparent; }
 .timeline-content {
   background: transparent;
   border: 1px solid transparent;
@@ -422,12 +424,13 @@ h1, h2, h3, .display { font-weight: 400; }
 
 /* DES Section Dark Mode */
 [data-theme='dark'] .des-section {
-  background: #1a1a1a; color: #f0f0f0;
-  border: 1px solid #4a4a4a;
+  background: transparent;
+  color: #f0f0f0;
+  border: 1px solid transparent;
 }
 [data-theme='dark'] .des-section .section-header { border-bottom: 1px solid #4a4a4a; }
 [data-theme='dark'] .des-section h2 { color: #f0f0f0; }
-[data-theme='dark'] .des-section .timeline-item { border-bottom: 1px solid #3a3a3a; }
+[data-theme='dark'] .des-section .timeline-item { border-bottom: 1px solid transparent; }
 [data-theme='dark'] .des-section .timeline-title { color: #f0f0f0; }
 [data-theme='dark'] .des-section .timeline-company { color: #a0a0a0; }
 [data-theme='dark'] .des-section .timeline-meta { color: #a0a0a0; }
