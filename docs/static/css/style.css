@@ -49,9 +49,9 @@
   --color-des-accent: #111827;
 
   /* Typography */
-  --font-display: 'Bebas Neue', 'Inter', system-ui, sans-serif;
-  --font-body: 'Playfair Display', 'Georgia', serif;
-  --font-meta: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+  --font-meta: 'IBM Plex Mono', Consolas, monospace;
 
   /* Spacing & Sizing */
   --radius: 8px;
