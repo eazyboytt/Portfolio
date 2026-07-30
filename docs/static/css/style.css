@@ -460,6 +460,24 @@ h1, h2, h3, .display { font-weight: 400; }
 /* Mobile Responsive */
 @media (max-width: 900px) {
   .sidebar { position: relative; width: 100%; bottom: auto; border-right: none; border-bottom: 1px solid var(--color-border); padding: 16px 14px; }
+  .sidebar-footer {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    z-index: 50;
+  }
+  .sidebar-footer .pulse,
+  .sidebar-footer > span:not(.theme-toggle):not(.icon-slot) {
+    display: none;
+  }
+  .theme-toggle {
+    margin-left: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
   .main { margin-left: 0; padding: 22px; }
   .hero h1 { font-size: 40px; }
   .u-grid-2col, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
