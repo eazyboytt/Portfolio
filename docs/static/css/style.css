@@ -337,7 +337,11 @@ h1, h2, h3, .display { font-weight: 400; }
   padding: 14px 16px; display: flex; align-items: center; gap: 14px;
   transition: border-color 0.25s ease, transform 0.2s ease, background 0.25s ease;
 }
-.skill-tile:hover { border-color: var(--color-border-2); transform: translateY(-1px); background: var(--color-panel-2); }
+.skill-tile:hover {
+  border-color: var(--color-border-2);
+  transform: translateY(-1px);
+  background: transparent;
+}
 .skill-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .skill-tile-name { font-weight: 500; color: var(--color-ink); font-size: 14px; }
 .skill-tile-level { font-family: var(--font-meta); font-size: 12px; color: var(--color-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
@@ -360,7 +364,16 @@ h1, h2, h3, .display { font-weight: 400; }
 .timeline-achievements { margin-top: 12px; padding-left: 18px; }
 .timeline-achievements li { margin: 6px 0; color: var(--color-ink); line-height: 1.5; }
 .timeline-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
-.tag { background: var(--color-panel-2); color: var(--color-ink); font-family: var(--font-meta); font-size: 11px; padding: 4px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.08em; }
+.tag {
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 
 /* Projects */
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
