@@ -406,14 +406,14 @@ h1, h2, h3, .display { font-weight: 400; }
 
 /* DES-Inspired High-Contrast Section */
 .des-section {
-  background: var(--color-des-white); color: var(--color-des-black);
-  border: 1px solid var(--color-des-black); border-radius: 12px; padding: 28px 32px; margin: 28px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: transparent; color: var(--color-des-black); border: 1px solid transparent;
+  border-radius: 12px; padding: 28px 32px; margin: 28px 0;
+  box-shadow: none;
 }
 .des-section .section-header { border-bottom: 1px solid var(--color-des-black); padding-bottom: 16px; margin-bottom: 20px; }
 .des-section h2 { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.3em; color: var(--color-des-black); margin-bottom: 8px; }
 .des-section .section-meta { color: var(--color-muted); font-size: 12px; letter-spacing: 0.15em; }
-.des-section .timeline-item { border-bottom: 1px solid #e5e5e5; padding: 16px 0; }
+.des-section .timeline-item { border-bottom: 1px solid var(--color-border); padding: 16px 0; }
 .des-section .timeline-item:last-child { border-bottom: none; }
 .des-section .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
 .des-section .timeline-title { font-family: var(--font-display); font-size: 20px; letter-spacing: 0.15em; color: var(--color-des-black); margin: 0; }
