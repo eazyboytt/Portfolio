@@ -6,10 +6,35 @@
   let width, height, particles;
   const mouse = { x: null, y: null, radius: 100 };
 
-  const DOT_COLOR = 'rgba(26, 34, 51, 0.4)';
-  const LINE_COLOR = '26, 34, 51';
+  const CONFIG = {
+    light: {
+      bg: '#f4f5f7',
+      dot: 'rgba(26, 34, 51, 0.4)',
+      lineRgb: '26, 34, 51',
+      lineOpacity: 0.15
+    },
+    dark: {
+      bg: '#0f1420',
+      dot: 'rgba(232, 234, 237, 0.45)',
+      lineRgb: '232, 234, 237',
+      lineOpacity: 0.12
+    }
+  };
+
   const LINE_MAX_DIST = 120;
   const DOT_RADIUS = 2;
+
+  function currentTheme() {
+    try {
+      return document.documentElement.getAttribute('data-theme') || 'light';
+    } catch (e) {
+      return 'light';
+    }
+  }
+
+  function cfg() {
+    return CONFIG[currentTheme()] || CONFIG.light;
+  }
 
   function resize() {
     width = canvas.width = window.innerWidth;
@@ -55,7 +80,9 @@
   }
 
   function draw() {
-    ctx.clearRect(0, 0, width, height);
+    const c = cfg();
+    ctx.fillStyle = c.bg;
+    ctx.fillRect(0, 0, width, height);
 
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
@@ -66,8 +93,8 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < LINE_MAX_DIST) {
-          const opacity = 0.15 * (1 - dist / LINE_MAX_DIST);
-          ctx.strokeStyle = `rgba(${LINE_COLOR}, ${opacity})`;
+          const opacity = c.lineOpacity * (1 - dist / LINE_MAX_DIST);
+          ctx.strokeStyle = `rgba(${c.lineRgb}, ${opacity})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
@@ -77,7 +104,7 @@
       }
     }
 
-    ctx.fillStyle = DOT_COLOR;
+    ctx.fillStyle = c.dot;
     for (const p of particles) {
       ctx.beginPath();
       ctx.arc(p.x, p.y, DOT_RADIUS, 0, Math.PI * 2);
