@@ -13,41 +13,41 @@
 </head>
 <body>
 <script>
-// === Configuration ===
 const CONFIG = {
-  seed: 42,
-  particleCount: 80,
-  connectionDistance: 180,
-  particleSize: 2.2,
-  dotColor: [180, 185, 190],
+  particleCount: 100,
+  connectionDistance: 170,
+  particleSize: 2.0,
+  dotColor: [185, 190, 196],
   lineColor: [26, 34, 51],
-  lineAlpha: 35,
+  lineAlpha: 45,
   bgColor: [244, 245, 247],
-  speed: 0.18,
-  driftScale: 0.25
+  baseSpeed: 0.22,
+  noiseAmplitude: 0.35,
+  frames: 360
 };
-
-// === Global State ===
 let particles = [];
-let noiseOffset = 0;
 
-// === Setup ===
 function setup() {
   pixelDensity(1);
   createCanvas(1920, 1080);
-  randomSeed(CONFIG.seed);
-  noiseSeed(CONFIG.seed);
+  randomSeed(42);
+  noiseSeed(42);
   noStroke();
 
-  // Initialize particles
   for (let i = 0; i < CONFIG.particleCount; i++) {
     particles.push({
       x: random(width),
       y: random(height),
-      vx: random(-CONFIG.speed, CONFIG.speed),
-      vy: random(-CONFIG.speed, CONFIG.speed),
-      size: random(CONFIG.particleSize * 0.8, CONFIG.particleSize * 1.4)
+      phase: random(TWO_PI),
+      radius: random(60, 260),
+      speed: random(CONFIG.baseSpeed * 0.6, CONFIG.baseSpeed),
+      drift: random(0.6, 1.4),
+      size: random(CONFIG.particleSize * 0.8, CONFIG.particleSize * 1.3),
+      baseX: 0,
+      baseY: 0
     });
+    particles[i].baseX = particles[i].x;
+    particles[i].baseY = particles[i].y;
   }
 
   frameRate(30);
@@ -55,41 +55,35 @@ function setup() {
   window._p5Ready = true;
 }
 
-// === Draw Loop ===
 function draw() {
   background(CONFIG.bgColor[0], CONFIG.bgColor[1], CONFIG.bgColor[2]);
 
-  // Update particles with gentle Perlin drift
-  noiseOffset += 0.002;
-  for (let p of particles) {
-    let angle = noise(p.x * 0.002, p.y * 0.002, noiseOffset) * TWO_PI * 2;
-    p.x += Math.cos(angle) * CONFIG.driftScale + p.vx;
-    p.y += Math.sin(angle) * CONFIG.driftScale + p.vy;
+  const t = (frameCount % CONFIG.frames) / CONFIG.frames * TWO_PI;
 
-    // Wrap around edges for smooth looping
-    if (p.x < -50) p.x = width + 50;
-    if (p.x > width + 50) p.x = -50;
-    if (p.y < -50) p.y = height + 50;
-    if (p.y > height + 50) p.y = -50;
+  for (let p of particles) {
+    const cx = p.baseX + Math.cos(t * p.drift + p.phase) * p.radius;
+    const cy = p.baseY + Math.sin(t * p.drift + p.phase) * p.radius;
+
+    p.x = (cx + width) % width;
+    p.y = (cy + height) % height;
   }
 
-  // Draw connections
   stroke(CONFIG.lineColor[0], CONFIG.lineColor[1], CONFIG.lineColor[2], CONFIG.lineAlpha);
-  strokeWeight(0.6);
+  strokeWeight(0.5);
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
-      let dx = particles[i].x - particles[j].x;
-      let dy = particles[i].y - particles[j].y;
-      let distSq = dx * dx + dy * dy;
-      if (distSq < CONFIG.connectionDistance * CONFIG.connectionDistance) {
-        let alpha = map(distSq, 0, CONFIG.connectionDistance * CONFIG.connectionDistance, CONFIG.lineAlpha, 0);
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const distSq = dx * dx + dy * dy;
+      const maxSq = CONFIG.connectionDistance * CONFIG.connectionDistance;
+      if (distSq < maxSq) {
+        const alpha = map(distSq, 0, maxSq, 38, 0);
         stroke(CONFIG.lineColor[0], CONFIG.lineColor[1], CONFIG.lineColor[2], alpha);
         line(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
       }
     }
   }
 
-  // Draw dots
   noStroke();
   fill(CONFIG.dotColor[0], CONFIG.dotColor[1], CONFIG.dotColor[2], 220);
   for (let p of particles) {
@@ -97,7 +91,6 @@ function draw() {
   }
 }
 
-// === Export Controls ===
 function keyPressed() {
   if (key === 's' || key === 'S') saveCanvas('particle-network', 'png');
   if (key === 'g' || key === 'G') saveGif('particle-network', 5);
