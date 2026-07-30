@@ -479,7 +479,15 @@ h1, h2, h3, .display { font-weight: 400; }
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
   .main { margin-left: 0; padding: 22px; }
-  .hero h1 { font-size: 40px; }
+  .hero h1 { font-size: 34px; }
+  .hero-sub { font-size: 18px; }
+  .hero-lead { font-size: 15px; }
+  .section-header h2 { font-size: 24px; }
+  .section-meta { font-size: 12px; }
+  .timeline-title { font-size: 18px; }
+  .timeline-company { font-size: 14px; }
+  .timeline-meta { font-size: 12px; }
+  .timeline-achievements li { font-size: 14px; }
   .u-grid-2col, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
   .footer { position: relative; bottom: auto; right: auto; margin-top: 18px; }
 }
