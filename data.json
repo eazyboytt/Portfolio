@@ -42,15 +42,15 @@
       "end": null,
       "location": "Philippines",
       "achievements": [
-        "IT Onboarding & User Support: Conducted structured IT onboarding sessions for new employees, covering support processes, ticketing systems, acceptable-use policies, cybersecurity best practices, company device handling, and pre-configured tools to ensure a secure and productive work environment.",
-        "Network Infrastructure Administration: Managed and supported network infrastructure, including router and modem deployment, switch configuration, VLAN implementation, LAN cabling, and wireless network setup. Monitored network performance and resolved connectivity issues to maintain stable and secure business operations.",
-        "End-User & Technical Support: Provided hardware, software, and network troubleshooting for end users, including remote desktop support, VPN configuration, Microsoft 365 installation, Outlook email troubleshooting, and TeamLogger setup/administration. Supported user onboarding, account provisioning, credential management, and remote access solutions.",
-        "TP-Link Omada SDN & Multi-Site Network Administration: Designed, deployed, and administered centralized TP-Link Omada SDN infrastructure across multiple sites using the Omada Controller for unified management. Configured WAN failover, load balancing, Quality of Service (QoS), VPN connectivity, and device provisioning while monitoring performance, client activity, and infrastructure health.",
-        "Network Security & Web Filtering: Managed AdGuard DNS and web-filtering solutions to enforce security policies, block malicious websites, reduce malware threats, and enhance overall network security.",
-        "Client & IT Coordination: Collaborated with clients and onshore IT teams to manage user access, account setup, remote desktop configurations, and technical support requests, ensuring timely issue resolution.",
-        "Microsoft Azure Administration: Provided administrative support within Microsoft Azure, including user account management, password resets, access administration, and basic DNS configuration.",
-        "cPanel Administration & Web Hosting Support: Managed cPanel environments for email and domain hosting, including mailbox administration, DNS configuration, email delivery troubleshooting, and website hosting support.",
-        "Email Migration Automation (IMAP to Microsoft Exchange Online): Developed and implemented PowerShell automation to streamline mailbox migrations from IMAP-based email platforms to Microsoft Exchange Online (Microsoft 365)."
+        "IT Onboarding & User Support — Ran onboarding sessions for new hires covering ticketing systems, security policies, and device setup for a secure, productive start.",
+        "Network Infrastructure Administration — Deployed and maintained routers, switches, VLANs, LAN cabling, and wireless networks; monitored performance and resolved connectivity issues.",
+        "End-User & Technical Support — Delivered remote hardware/software/network troubleshooting, VPN setup, Microsoft 365 and Outlook support, and account provisioning.",
+        "TP-Link Omada SDN Administration — Deployed and managed multi-site SDN infrastructure via Omada Controller, handling WAN failover, QoS, VPN, and device monitoring.",
+        "Network Security & Web Filtering — Configured AdGuard DNS filtering to block malicious sites and strengthen network-wide security.",
+        "Client & IT Coordination — Partnered with clients and onshore IT teams on access management, remote setup, and issue resolution.",
+        "Microsoft Azure Administration — Handled user accounts, password resets, access control, and basic DNS configuration.",
+        "cPanel & Web Hosting Support — Managed mailbox, DNS, and hosting configurations, troubleshooting email delivery issues.",
+        "Email Migration Automation — Built PowerShell scripts to automate IMAP-to-Exchange Online mailbox migrations."
       ],
       "tech": [
         "Microsoft 365",
