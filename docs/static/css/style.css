@@ -131,19 +131,18 @@ h1, h2, h3, .display { font-weight: 400; }
 .main { margin-left: 280px; padding: 38px 44px 108px; position: relative; z-index: 1; max-width: 1120px; }
 .section { margin-bottom: 28px; }
 
-/* Section Block - Transparent/translucent look */
+/* Section Block */
 .section-block {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--color-border);
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius);
   padding: 22px 24px;
   margin-bottom: 20px;
-  backdrop-filter: blur(10px);
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 [data-theme='dark'] .section-block {
-  background: rgba(30, 30, 30, 0.95);
+  background: transparent;
 }
 
 .section-block:hover { border-color: var(--color-border-2); transform: translateY(-1px); }
@@ -155,17 +154,16 @@ h1, h2, h3, .display { font-weight: 400; }
 .section-header h2 { font-family: var(--font-display); font-size: 34px; letter-spacing: 0.35em; color: var(--color-ink); }
 .section-meta { font-family: var(--font-meta); font-size: 13px; color: var(--color-muted); letter-spacing: 0.2em; text-transform: uppercase; }
 
-/* Sidebar - Subtle */
+/* Sidebar - Glass */
 .sidebar {
   position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
-  background: rgba(255, 255, 255, 0.95);
-  border-right: 1px solid var(--color-border);
+  background: transparent;
+  border-right: 1px solid transparent;
   padding: 28px 24px 24px; display: flex; flex-direction: column; gap: 18px; z-index: 20; overflow-y: auto;
-  backdrop-filter: blur(10px);
 }
 
 [data-theme='dark'] .sidebar {
-  background: rgba(30, 30, 30, 0.95);
+  background: transparent;
 }
 
 .sidebar-brand { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; padding-bottom: 22px; border-bottom: 1px solid var(--color-border); }
@@ -310,7 +308,10 @@ h1, h2, h3, .display { font-weight: 400; }
 
 /* Contact Bar */
 .contact-bar {
-  background: var(--color-panel); border: 1px solid var(--color-border); border-radius: 14px; padding: 18px 22px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 18px 22px;
   display: flex; flex-wrap: wrap; gap: 22px 32px; align-items: center; margin: 22px 0;
 }
 .contact-item { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--color-ink); }
@@ -322,7 +323,9 @@ h1, h2, h3, .display { font-weight: 400; }
 /* Skills Grid */
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .skill-tile {
-  background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
   padding: 14px 16px; display: flex; align-items: center; gap: 14px;
   transition: border-color 0.25s ease, transform 0.2s ease, background 0.25s ease;
 }
@@ -337,7 +340,10 @@ h1, h2, h3, .display { font-weight: 400; }
 .timeline-item { position: relative; padding-left: 28px; margin-bottom: 28px; }
 .timeline-item:last-child { margin-bottom: 0; }
 .timeline-content {
-  background: var(--color-panel); border: 1px solid var(--color-border); border-radius: 10px; padding: 16px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 16px 20px;
 }
 .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
 .timeline-title { font-family: var(--font-display); font-size: 20px; letter-spacing: 0.15em; color: var(--color-ink); margin: 0; }
@@ -351,7 +357,9 @@ h1, h2, h3, .display { font-weight: 400; }
 /* Projects */
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 .project-card {
-  background: var(--color-panel); border: 1px solid var(--color-border); border-radius: 14px; padding: 22px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 14px; padding: 22px;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .project-card:hover { border-color: var(--color-border-2); transform: translateY(-2px); }
