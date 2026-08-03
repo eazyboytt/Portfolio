@@ -429,6 +429,7 @@ h1, h2, h3, .display { font-weight: 400; }
   .topnav-nav { display: none; }
   .topnav-actions { margin-left: auto; }
   .nav-toggle { display: inline-flex; margin-left: auto; }
+  .theme-toggle { display: none; }
   .nav-item .nav-icon { display: inline-flex; }
   .sidebar-footer {
     position: fixed;
