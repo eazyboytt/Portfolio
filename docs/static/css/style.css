@@ -217,6 +217,7 @@ h1, h2, h3, .display { font-weight: 400; }
   color: #1a2233;
   font-weight: 600;
 }
+.nav-item .nav-icon { display: none; }
 
 [data-theme='dark'] .topnav {
   background: #0f1420;
@@ -410,6 +411,7 @@ h1, h2, h3, .display { font-weight: 400; }
   .topnav { flex-wrap: wrap; gap: 10px; padding: 10px 14px; }
   .topnav-nav { order: 3; width: 100%; justify-content: flex-start; overflow-x: auto; }
   .topnav-actions { margin-left: auto; }
+  .nav-item .nav-icon { display: inline-flex; }
   .sidebar-footer {
     position: fixed;
     top: 12px;
