@@ -23,19 +23,15 @@
 <body>
   {% from "_partials.html" import icon %}
   <canvas id="bg-particles" aria-hidden="true"></canvas>
-  <aside class="sidebar">
-    {% set p = data.profile %}
-    <div class="sidebar-brand">
-      {% set name = p.name %}
-      {% set parts = name.split() %}
-      <div class="sidebar-avatar">{{ parts[0][0] }}{% if parts|length > 1 %}{{ parts[-1][0] }}{% endif %}</div>
+  <header class="topnav">
+    <div class="topnav-brand">
+      <div class="topnav-avatar">JG</div>
       <div>
-        <div class="sidebar-name">{{ p.name }}</div>
-        <div class="sidebar-title">{{ p.title }}</div>
+        <div class="topnav-name">Jhansi Yeoj Gatus</div>
+        <div class="topnav-role">IT SUPPORT</div>
       </div>
     </div>
-
-    <nav class="sidebar-nav">
+    <nav class="topnav-nav">
       <a href="index.html" class="nav-item {{ 'active' if template_name|default('') == 'dashboard.html' else '' }}">
         <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.709l7-7a2 2 0 0 1 2.582 0l7 7A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
         Home</a>
@@ -61,15 +57,14 @@
         <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Resume</a>
     </nav>
-
-    <div class="sidebar-footer">
+    <div class="topnav-actions">
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
         <span class="icon-slot">{{ icon(request_theme == 'dark' and 'sun' or 'moon', 16) }}</span>
       </button>
       <span class="pulse"></span>
-      <span>sys.online · {{ now.year }}</span>
+      <span class="nav-status">sys.online · {{ now.year }}</span>
     </div>
-  </aside>
+  </header>
 
   <main class="main">
     {% block content %}{% endblock %}
