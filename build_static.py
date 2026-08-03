@@ -47,6 +47,7 @@ env = Environment(
 )
 env.globals['now'] = __import__('datetime').datetime.now()
 env.globals['template_name'] = ''
+env.globals['request_theme'] = 'light'
 
 # Generate resume DOCX for static hosting
 try:
