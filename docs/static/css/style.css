@@ -497,3 +497,6 @@ h1, h2, h3, .display { font-weight: 400; }
   .u-grid-2col, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
   .footer { position: relative; bottom: auto; right: auto; margin-top: 18px; }
 }
+
+/* Profile Portrait */
+.profile-photo { max-width: 140px; max-height: 140px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
