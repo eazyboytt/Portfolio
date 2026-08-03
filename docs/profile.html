@@ -177,11 +177,6 @@
       const open = () => { body.classList.add('nav-open'); drawer.setAttribute('aria-hidden','false'); toggle.setAttribute('aria-expanded','true'); };
       const shut = () => { body.classList.remove('nav-open'); drawer.setAttribute('aria-hidden','true'); toggle.setAttribute('aria-expanded','false'); };
       toggle.addEventListener('click', () => {
-        const root = document.documentElement;
-        const isDark = root.getAttribute('data-theme') === 'dark';
-        const next = isDark ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-        try { localStorage.setItem('preferred-theme', next); } catch (err) {}
         if (!body.classList.contains('nav-open')) open();
       });
       if (close) close.addEventListener('click', shut);
