@@ -171,16 +171,18 @@
   <script src="static/js/particles.js"></script>
   <script>
     (function() {
-      const btn = document.getElementById('theme-toggle') || document.getElementById('theme-toggle-drawer');
-      if (!btn) return;
-      const key = 'preferred-theme';
+      const desktopBtn = document.getElementById('theme-toggle');
+      const mobileBtn = document.getElementById('theme-toggle-drawer');
       const root = document.documentElement;
-      btn.addEventListener('click', () => {
+      const key = 'preferred-theme';
+      const apply = () => {
         const isDark = root.getAttribute('data-theme') === 'dark';
         const next = isDark ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
         try { localStorage.setItem(key, next); } catch (err) {}
-      });
+      };
+      if (desktopBtn) desktopBtn.addEventListener('click', apply);
+      if (mobileBtn) mobileBtn.addEventListener('click', apply);
       try {
         const stored = localStorage.getItem(key);
         if (stored && stored !== root.getAttribute('data-theme')) {
