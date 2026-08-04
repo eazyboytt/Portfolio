@@ -128,8 +128,7 @@ h1, h2, h3, .display { font-weight: 400; }
 .mono { font-family: var(--font-meta); }
 
 /* Main Layout */
-.main { margin: 0; padding: 38px 44px 108px; position: relative; z-index: 1; max-width: 1120px; }
-.page-container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.main { margin: 0 auto; padding: 38px 44px 108px; position: relative; z-index: 1; max-width: 960px; }
 .section { margin-bottom: 28px; }
 
 /* Section Block */
