@@ -99,7 +99,7 @@
     </div>
   </header>
 
-  <main class="main">
+  <main class="main {{ main_class or '' }}">
     {% block content %}{% endblock %}
     <div class="footer">
       <span class="footer-logo-avatar">JG</span>
