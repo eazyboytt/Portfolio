@@ -36,56 +36,56 @@ def set_theme():
 def dashboard():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("dashboard.html", data=data, theme=theme)
+    return render_template("dashboard.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/about")
 @app.route("/about.html")
 def about():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("about.html", data=data, theme=theme)
+    return render_template("about.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/profile")
 @app.route("/profile.html")
 def profile():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("profile.html", data=data, theme=theme)
+    return render_template("profile.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/skills")
 @app.route("/skills.html")
 def skills():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("skills.html", data=data, theme=theme)
+    return render_template("skills.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/experience")
 @app.route("/experience.html")
 def experience():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("experience.html", data=data, theme=theme)
+    return render_template("experience.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/projects")
 @app.route("/projects.html")
 def projects():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("projects.html", data=data, theme=theme)
+    return render_template("projects.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/resume")
 @app.route("/resume.html")
 def resume_page():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("resume.html", data=data, theme=theme)
+    return render_template("resume.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/certifications")
 @app.route("/certifications.html")
 def certifications():
     data = load_data()
     theme = request.cookies.get("theme", "light")
-    return render_template("certifications.html", data=data, theme=theme)
+    return render_template("certifications.html", data=data, p=data.get("profile", {}), theme=theme)
 
 @app.route("/api/resume/docx")
 def resume_docx():
