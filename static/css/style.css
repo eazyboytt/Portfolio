@@ -122,11 +122,11 @@ body::after { right: -16vw; bottom: -18vw; background: #0891b2; animation-delay:
 }
 
 [data-theme='light'] #bg-particles {
-  background: #f4f5f7;
+  background: transparent;
 }
 
 [data-theme='dark'] #bg-particles {
-  background: #0f1420;
+  background: transparent;
 }
 
 /* Typography */
