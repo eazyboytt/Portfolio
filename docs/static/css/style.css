@@ -136,9 +136,11 @@ h1, h2, h3, .display { font-weight: 400; }
 .mono { font-family: var(--font-meta); }
 
 /* Main Layout */
-.main { margin: 0 auto; padding: 38px 44px 108px; position: relative; z-index: 1; max-width: 960px; }
-.main.main-home, .main.main-profile { margin: 0; max-width: 1120px; }
-.section { margin-bottom: 28px; padding: 28px; border: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent); border-radius: 22px; background: color-mix(in srgb, var(--color-panel) 52%, transparent); box-shadow: 0 18px 50px rgba(15,23,42,.06); backdrop-filter: blur(16px); animation: section-enter .65s ease both; }
+.main { width: min(calc(100% - 32px), 1120px); margin: 0 auto; padding: 38px 0 108px; position: relative; z-index: 1; }
+.main.main-home, .main.main-profile, .main.main-experience, .main.main-resume { margin: 0 auto; max-width: none; }
+.section { margin-bottom: 28px; padding: 28px; border: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent); border-radius: 24px; background: color-mix(in srgb, var(--color-panel) 56%, transparent); box-shadow: 0 24px 70px rgba(15,23,42,.09); backdrop-filter: blur(18px); animation: section-enter .65s ease both; position: relative; overflow: hidden; isolation: isolate; }
+.section::before { content: ''; position: absolute; inset: -35% -20% auto auto; width: 360px; height: 360px; border-radius: 999px; background: radial-gradient(circle, rgba(99,102,241,.18), transparent 68%); filter: blur(10px); z-index: -1; pointer-events: none; }
+.section::after { content: ''; position: absolute; inset: auto auto -32% -18%; width: 320px; height: 320px; border-radius: 999px; background: radial-gradient(circle, rgba(6,182,212,.13), transparent 68%); filter: blur(8px); z-index: -1; pointer-events: none; }
 @keyframes section-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .section .section { padding: 0; border: 0; box-shadow: none; background: transparent; backdrop-filter: none; }
 .des-section { border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent); border-radius: 18px; background: color-mix(in srgb, var(--color-panel) 42%, transparent); backdrop-filter: blur(12px); }
@@ -158,9 +160,10 @@ h1, h2, h3, .display { font-weight: 400; }
 .surface {
   background: color-mix(in srgb, var(--color-panel) 68%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
-  border-radius: var(--radius);
+  border-radius: 16px;
   padding: 22px 24px;
   transition: border-color 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(12px);
 }
 
 [data-theme='dark'] .section-block {
@@ -290,10 +293,10 @@ h1, h2, h3, .display { font-weight: 400; }
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 .btn:hover { border-color: var(--color-border-2); background: var(--color-panel-2); transform: translateY(-1px); }
-.btn .primary { background: var(--color-ink); color: var(--color-bg); border-color: var(--color-ink); font-weight: 500; }
-.btn .primary:hover { background: var(--color-accent); border-color: var(--color-accent); color: white; }
-.btn .ghost { border-color: transparent; }
-.btn .ghost:hover { border-color: var(--color-border); }
+.btn.primary { background: var(--color-ink); color: var(--color-bg); border-color: var(--color-ink); font-weight: 500; }
+.btn.primary:hover { background: var(--color-accent); border-color: var(--color-accent); color: white; }
+.btn.ghost { border-color: transparent; }
+.btn.ghost:hover { border-color: var(--color-border); }
 
 /* Contact Bar */
 .contact-bar {
@@ -370,6 +373,7 @@ h1, h2, h3, .display { font-weight: 400; }
 .project-card:hover { border-color: var(--color-border-2); transform: translateY(-2px); }
 
 .card, .contact-bar, .skill-tile { background: color-mix(in srgb, var(--color-panel) 62%, transparent); border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent); backdrop-filter: blur(12px); }
+.card { border-radius: 16px; padding: 22px; }
 .card, .contact-bar, .skill-tile, .timeline-content { transition: transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease; }
 .card:hover, .contact-bar:hover, .skill-tile:hover, .timeline-content:hover { border-color: var(--color-border-2); box-shadow: 0 14px 34px rgba(15,23,42,.08); transform: translateY(-2px); }
 [data-theme='dark'] .card:hover, [data-theme='dark'] .contact-bar:hover, [data-theme='dark'] .skill-tile:hover, [data-theme='dark'] .timeline-content:hover { box-shadow: 0 14px 34px rgba(0,0,0,.24); }
@@ -470,7 +474,7 @@ h1, h2, h3, .display { font-weight: 400; }
     margin-left: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
-  .main { margin-left: 0; padding: 22px; }
+  .main { width: min(calc(100% - 24px), 1120px); margin: 0 auto; padding: 22px 0 88px; }
   .hero h1 { font-size: 34px; }
   .hero-sub { font-size: 18px; }
   .hero-lead { font-size: 15px; }
@@ -488,7 +492,7 @@ h1, h2, h3, .display { font-weight: 400; }
 .profile-photo { max-width: 140px; max-height: 140px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
 
 /* Aurora hero */
-.hero-aurora { min-height: min(620px, calc(100vh - 100px)); margin: -38px -44px 28px; padding: 96px 64px 76px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); align-items: center; gap: 48px; position: relative; overflow: hidden; isolation: isolate; background: #07101f; color: #f8fafc; border: 1px solid rgba(148,163,184,.18); border-radius: 0 0 28px 28px; }
+.hero-aurora { min-height: min(620px, calc(100vh - 100px)); margin: 0 0 28px; padding: 96px 64px 76px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); align-items: center; gap: 48px; position: relative; overflow: hidden; isolation: isolate; background: #07101f; color: #f8fafc; border: 1px solid rgba(148,163,184,.18); border-radius: 28px; box-shadow: 0 30px 90px rgba(15,23,42,.18); }
 .hero-aurora-layer { position: absolute; width: 52%; aspect-ratio: 1; border-radius: 50%; filter: blur(70px); opacity: .58; z-index: -2; animation: hero-drift 18s ease-in-out infinite alternate; }
 .hero-aurora-one { top: -35%; left: -12%; background: #2563eb; }
 .hero-aurora-two { right: -16%; bottom: -38%; background: #9333ea; animation-delay: -7s; }
@@ -517,13 +521,16 @@ h1, h2, h3, .display { font-weight: 400; }
 @media (prefers-reduced-motion: reduce) { .hero-aurora-layer, .hero-content, .hero-profile-card { animation: none; } }
 @media (prefers-reduced-motion: reduce) { body::before, body::after, *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
 @media (max-width: 900px) {
-  .hero-aurora { margin: -22px -22px 28px; padding: 64px 24px 42px; min-height: auto; grid-template-columns: 1fr; gap: 34px; border-radius: 0 0 22px 22px; }
+  .hero-aurora { margin: 0 0 28px; padding: 64px 24px 42px; min-height: auto; grid-template-columns: 1fr; gap: 34px; border-radius: 22px; }
   .hero-profile-card { justify-self: stretch; width: 100%; max-width: 360px; }
   .hero-profile-image-wrap { height: 190px; }
   .section { padding: 20px 16px; border-radius: 16px; }
 }
 
 /* Site-wide surface treatment (kept last so every page component receives it). */
-.section { background: color-mix(in srgb, var(--color-panel) 52%, transparent); border-color: color-mix(in srgb, var(--color-border) 78%, transparent); }
+.section { background: color-mix(in srgb, var(--color-panel) 56%, transparent); border-color: color-mix(in srgb, var(--color-border) 78%, transparent); }
 .des-section { background: color-mix(in srgb, var(--color-panel) 42%, transparent); border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent); border-radius: 18px; }
-[data-theme='dark'] .section, [data-theme='dark'] .des-section { background: rgba(15,23,42,.48); }
+.project-card, .timeline-content, .section-block, .surface { box-shadow: 0 12px 32px rgba(15,23,42,.055); }
+.project-card, .timeline-content, .section-block, .surface, .card, .contact-bar, .skill-tile { background-image: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,0)); }
+[data-theme='dark'] .section, [data-theme='dark'] .des-section { background: rgba(15,23,42,.54); }
+[data-theme='dark'] .surface, [data-theme='dark'] .card, [data-theme='dark'] .contact-bar, [data-theme='dark'] .skill-tile, [data-theme='dark'] .project-card, [data-theme='dark'] .timeline-content { background-color: rgba(15,23,42,.42); border-color: rgba(148,163,184,.18); }

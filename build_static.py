@@ -4,10 +4,10 @@ import re
 import sys
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-sys.path.insert(0, str(Path('C:/Users/eazyboytt/second-brain')))
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
 from app import build_resume_docx_bytes
 
-ROOT = Path('C:/Users/eazyboytt/second-brain')
 DOCS = ROOT / 'docs'
 TEMPLATES = ROOT / 'templates'
 STATIC = ROOT / 'static'
