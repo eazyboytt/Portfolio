@@ -2,14 +2,27 @@
 {% extends "base.html" %}
 {% block title %}Jhansi Yeoj Gatus{% endblock %}
 {% block content %}
-<div class="hero">
-  <h1>{{ p.name }}</h1>
-  <div class="hero-sub">{{ p.title }}</div>
-  <p class="hero-lead">{{ p.summary }}</p>
-  <div class="hero-actions">
-    <a href="mailto:{{ p.email }}" class="btn primary">Email Me</a>
+<section class="hero hero-aurora" aria-labelledby="hero-title">
+  <div class="hero-aurora-layer hero-aurora-one" aria-hidden="true"></div>
+  <div class="hero-aurora-layer hero-aurora-two" aria-hidden="true"></div>
+  <div class="hero-grid-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-status"><span class="hero-status-dot"></span> Available for opportunities</div>
+    <div class="hero-mark">IT SUPPORT · PAMPANGA, PHILIPPINES</div>
+    <h1 id="hero-title">{{ p.name }}</h1>
+    <div class="hero-sub">{{ p.title }}</div>
+    <p class="hero-lead">{{ p.summary }}</p>
+    <div class="hero-actions">
+      <a href="mailto:{{ p.email }}" class="btn primary">Email Me <span aria-hidden="true">↗</span></a>
+      <a href="about.html" class="btn ghost">Explore my work <span aria-hidden="true">→</span></a>
+    </div>
   </div>
-</div>
+  <div class="hero-profile-card" aria-label="Profile summary">
+    <div class="hero-profile-image-wrap"><img src="static/images/profile-portrait-transparent.png" alt="Portrait of {{ p.name }}" class="hero-profile-image"></div>
+    <div class="hero-profile-card-copy"><span class="meta">Currently</span><strong>Keeping systems<br>running smoothly.</strong></div>
+    <div class="hero-profile-card-footer"><span class="pulse"></span> Open to connect <span>⌁</span></div>
+  </div>
+</section>
 
 <div class="contact-bar">
   <div class="contact-item">
