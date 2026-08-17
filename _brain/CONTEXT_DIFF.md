@@ -1,0 +1,124 @@
+﻿# Context Diff
+
+- Current commit: 7ffcc4d7fad72c8af2dda07adfd286c1b449789d
+- Branch: main
+- Base commit: 7ffcc4d7fad72c8af2dda07adfd286c1b449789d
+
+## Changed files
+
+- `.cursorrules`
+- `.github/copilot-instructions.md`
+- `.gitignore`
+- `.windsurfrules`
+- `_brain/AI_BRAIN.md`
+- `_brain/architecture/ARCHITECTURE.md`
+- `_brain/archive/.gitkeep`
+- `_brain/BRAIN_CHANGELOG.md`
+- `_brain/BRAIN_INDEX.md`
+- `_brain/CONTEXT_DIFF.md`
+- `_brain/CONTINUE_PROMPT.md`
+- `_brain/CURRENT_STATE.md`
+- `_brain/daily/.gitkeep`
+- `_brain/daily/2026-08-17.md`
+- `_brain/daily/TEMPLATE.md`
+- `_brain/db_backup/backup_policy.md`
+- `_brain/decisions/ADR-TEMPLATE.md`
+- `_brain/decisions/decision_log.md`
+- `_brain/decisions/rejected_options.md`
+- `_brain/deployment/deployment.md`
+- `_brain/deployment/environments.md`
+- `_brain/fixes/_template.md`
+- `_brain/fixes/ERROR_FINGERPRINTS.md`
+- `_brain/fixes/fix_log.md`
+- `_brain/fixes/README.md`
+- `_brain/governance/code_review_rules.md`
+- `_brain/governance/rules.md`
+- `_brain/governance/scope.md`
+- `_brain/guides/new_machine_setup.md`
+- `_brain/improvements/improvement_log.md`
+- `_brain/intents/bug-fix.md`
+- `_brain/intents/code-review.md`
+- `_brain/intents/feature-development.md`
+- `_brain/intents/framework-maintenance.md`
+- `_brain/intents/investigation.md`
+- `_brain/intents/refactor.md`
+- `_brain/interaction/assumptions.md`
+- `_brain/interaction/response_rules.md`
+- `_brain/memory/app_context.md`
+- `_brain/memory/global_brain_link.md`
+- `_brain/memory/glossary.md`
+- `_brain/memory/system_architecture.md`
+- `_brain/modules/MODULE_TEMPLATE.md`
+- `_brain/overview/system_summary.md`
+- `_brain/prompts/bootstrap_prompt.md`
+- `_brain/prompts/code_review_prompt.md`
+- `_brain/prompts/continue_prompt.md`
+- `_brain/prompts/debug_prompt.md`
+- `_brain/quick-ref/commands.md`
+- `_brain/quick-ref/README.md`
+- `_brain/quick-ref/snippets.md`
+- `_brain/releases/changelog.md`
+- `_brain/releases/versioning.md`
+- `_brain/security/auth_boundaries.md`
+- `_brain/security/secrets_policy.md`
+- `_brain/sessions/archive/.gitkeep`
+- `_brain/sessions/CHECKPOINT.md`
+- `_brain/sessions/LATEST_HANDOFF.md`
+- `_brain/sessions/manifests/.gitkeep`
+- `_brain/skills/code_review_checklist.md`
+- `_brain/skills/code_review_quick_ref.md`
+- `_brain/skills/REQUIRED_SKILLS_MANIFEST.md`
+- `_brain/skills/resources.md`
+- `_brain/skills/skills.md`
+- `_brain/staging/README.md`
+- `_brain/templates/entrypoints/.cursorrules`
+- `_brain/templates/entrypoints/.windsurfrules`
+- `_brain/templates/entrypoints/AGENTS.md`
+- `_brain/templates/entrypoints/CLAUDE.md`
+- `_brain/templates/entrypoints/copilot-instructions.md`
+- `_brain/templates/entrypoints/README.md`
+- `_brain/templates/KNOWLEDGE_RECORD_TEMPLATE.md`
+- `_brain/templates/repo_init_script.sh`
+- `_brain/templates/update_rules.md`
+- `_brain/tools/brain-doctor.ps1`
+- `_brain/tools/context-decay.ps1`
+- `_brain/tools/context-diff.ps1`
+- `_brain/tools/context-metrics.ps1`
+- `_brain/tools/dependency-boundary.ps1`
+- `_brain/tools/error-fingerprint.ps1`
+- `_brain/tools/handoff-baseline.ps1`
+- `_brain/tools/handoff-compact.ps1`
+- `_brain/tools/knowledge-audit.ps1`
+- `_brain/tools/module-graph.ps1`
+- `_brain/tools/nexus.ps1`
+- `_brain/tools/record-session-cost.ps1`
+- `_brain/tools/select-context.ps1`
+- `_brain/tools/session-checkpoint.ps1`
+- `_brain/tools/skill-router.ps1`
+- `_brain/tools/slice-file.ps1`
+- `_brain/tools/token-estimate.ps1`
+- `_brain/tools/tool_inventory.md`
+- `_brain/tools/workflow-gate.ps1`
+- `AGENTS.md`
+- `CLAUDE.md`
+- `index.html`
+- `package.json`
+- `pnpm-lock.yaml`
+- `src/App.jsx`
+- `src/components/LiveBackground.jsx`
+- `src/components/ui.jsx`
+- `src/lib/utils.js`
+- `src/main.jsx`
+- `src/styles.css`
+- `static/favicon.svg`
+- `static/images/profile-portrait-black-coat.png`
+- `static/images/profile-portrait-current.jpg`
+- `static/images/profile-portrait-dark-suit.png`
+- `static/images/profile-portrait-light-theme.png`
+- `static/images/profile-portrait-tailored-suit.png`
+- `static/images/profile-portrait-theme-current.png`
+- `vite.config.js`
+
+## Use
+
+Read only files that are directly relevant to the current task. The diff is an expansion aid, not permission to load every changed file.
