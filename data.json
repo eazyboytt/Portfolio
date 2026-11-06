@@ -6,7 +6,7 @@
     "email": "jhansiyeojgatus10@gmail.com",
     "phone": "+63 953 054 1704",
     "location": "Pampanga, Philippines",
-    "linkedin": "https://www.linkedin.com/in/jhansigatus",
+    "linkedin": "https://www.linkedin.com/in/jhansi-yeoj-gatus",
     "github": "https://github.com/eazyboytt",
     "summary": "IT Support professional who turns complex infrastructure into reliable, day-to-day operations. Experienced across network administration, multi-site SDN management, Microsoft 365/Azure support, VPN and remote access, web filtering, and automated email migrations. I don't just resolve tickets — I build the processes, documentation, and systems that keep teams running smoothly and prevent the same issue from happening twice.",
     "target_roles": [
@@ -17,22 +17,109 @@
     ]
   },
   "skills": [
-    {"name": "IT Onboarding & User Support", "level": "Advanced", "evidence": "Structured new-hire onboarding covering IT workflows, ticketing, acceptable-use policy, cybersecurity, device handling, and pre-configured tool orientation.", "last_used": "2026-07"},
-    {"name": "Network Infrastructure Administration", "level": "Advanced", "evidence": "Router/modem deployment, switch configuration, VLAN implementation, LAN cabling, wireless setup, and performance monitoring.", "last_used": "2026-07"},
-    {"name": "End-User & Technical Support", "level": "Advanced", "evidence": "Hardware/software/network troubleshooting, remote desktop support, VPN configuration, Microsoft 365 installation, Outlook troubleshooting, TeamLogger administration.", "last_used": "2026-07"},
-    {"name": "TP-Link Omada SDN & Multi-Site Administration", "level": "Intermediate", "evidence": "Deployment of centralized Omada SDN across sites, Omada Controller management, WAN failover, load balancing, QoS, VPN, and device provisioning.", "last_used": "2026-07"},
-    {"name": "Network Security & Web Filtering", "level": "Intermediate", "evidence": "AdGuard DNS administration, web-filtering policies, security policy enforcement, malware reduction, and network hygiene.", "last_used": "2026-07"},
-    {"name": "Client & IT Coordination", "level": "Intermediate", "evidence": "Collaboration with clients and onshore IT teams on access management, account setup, remote desktop configuration, and technical support requests.", "last_used": "2026-07"},
-    {"name": "Microsoft Azure Administration", "level": "Intermediate", "evidence": "User account management, password resets, access administration, basic DNS configuration, and tenant-level support.", "last_used": "2026-07"},
-    {"name": "cPanel & Web Hosting Support", "level": "Intermediate", "evidence": "cPanel environments for email/domain hosting, mailbox administration, DNS configuration, email delivery troubleshooting, and website hosting support.", "last_used": "2026-07"},
-    {"name": "Email Migration Automation", "level": "Intermediate", "evidence": "PowerShell automation to migrate user mailboxes from IMAP platforms to Microsoft Exchange Online (Microsoft 365).", "last_used": "2026-07"},
-    {"name": "Microsoft 365 / Exchange", "level": "Advanced", "evidence": "Mailbox migrations, OneDrive provisioning, M365 rollout support, post-migration remediation, Outlook troubleshooting.", "last_used": "2026-07"},
-    {"name": "Windows Administration", "level": "Advanced", "evidence": "Endpoint troubleshooting, OS image handling, driver/installer support.", "last_used": "2026-07"},
-    {"name": "VPN & Remote Access", "level": "Advanced", "evidence": "OpenVPN, GlobalProtect, RDP configuration, VPN onboarding, remote desktop support.", "last_used": "2026-07"},
-    {"name": "Networking", "level": "Advanced", "evidence": "LAN/WAN configuration, VLANs, TCP/IP, DNS/routing, wireless setup, switch/router administration.", "last_used": "2026-07"},
-    {"name": "ServiceNow / Ticketing", "level": "Intermediate", "evidence": "Ticket lifecycle management, triage, SLA tracking, reporting for management visibility.", "last_used": "2026-07"},
-    {"name": "Application Support", "level": "Intermediate", "evidence": "Teams, Zoom, Webex, Front, LINE, BlueStacks, Brave/Chrome, TeamLogger administration.", "last_used": "2026-07"},
-    {"name": "Automation / Scripting", "level": "Intermediate", "evidence": "PowerShell automation for email migrations, batch scripting, task automation.", "last_used": "2026-07"}
+    {
+      "name": "Networking & Infrastructure",
+      "summary": "Deploy and maintain the LAN/WAN, wireless and cabling that teams depend on, and keep performance visible.",
+      "tags": [
+        "Routers & switches",
+        "VLANs",
+        "LAN/WAN",
+        "TCP/IP",
+        "DNS & routing",
+        "Wireless",
+        "LAN cabling",
+        "Performance monitoring"
+      ],
+      "icon": "Network"
+    },
+    {
+      "name": "Multi-Site SDN (TP-Link Omada)",
+      "summary": "Centralised management of several sites from one controller, with resilient connectivity.",
+      "tags": [
+        "Omada Controller",
+        "WAN failover",
+        "Load balancing",
+        "QoS",
+        "Site VPN",
+        "Device provisioning"
+      ],
+      "icon": "Waypoints"
+    },
+    {
+      "name": "Network Security & Filtering",
+      "summary": "Network-wide protection that reduces malware exposure and enforces acceptable use.",
+      "tags": [
+        "AdGuard DNS",
+        "Web filtering",
+        "Policy enforcement",
+        "Malware reduction",
+        "Network hygiene"
+      ],
+      "icon": "ShieldCheck"
+    },
+    {
+      "name": "VPN & Remote Access",
+      "summary": "Secure remote work set up end to end, from profiles to staff onboarding.",
+      "tags": [
+        "OpenVPN",
+        "GlobalProtect",
+        "RDP",
+        "VPN onboarding",
+        "Remote desktop support"
+      ],
+      "icon": "KeyRound"
+    },
+    {
+      "name": "Microsoft 365 & Azure",
+      "summary": "Mailboxes, identities and access for Microsoft 365 tenants, including post-migration clean-up.",
+      "tags": [
+        "Exchange Online",
+        "OneDrive",
+        "Outlook",
+        "M365 rollout",
+        "Azure user & access admin",
+        "Tenant support"
+      ],
+      "icon": "Cloud"
+    },
+    {
+      "name": "Automation & Migration",
+      "summary": "Scripted, repeatable migrations that replace manual, error-prone work.",
+      "tags": [
+        "PowerShell",
+        "IMAP to Exchange Online",
+        "Batch scripting",
+        "Task automation"
+      ],
+      "icon": "Terminal"
+    },
+    {
+      "name": "Help Desk & End-User Support",
+      "summary": "Ticket-driven support with clear triage, SLA visibility and structured onboarding for new hires.",
+      "tags": [
+        "ServiceNow",
+        "Ticket triage & SLA",
+        "IT onboarding",
+        "Windows 10/11",
+        "OS images & drivers",
+        "Teams / Zoom / Webex",
+        "TeamLogger"
+      ],
+      "icon": "Headset"
+    },
+    {
+      "name": "Web Hosting & Coordination",
+      "summary": "Hosting, mailbox and DNS support, plus day-to-day coordination with clients and onshore IT.",
+      "tags": [
+        "cPanel",
+        "Mailbox admin",
+        "DNS configuration",
+        "Email delivery",
+        "Client coordination",
+        "Onshore IT liaison"
+      ],
+      "icon": "Globe"
+    }
   ],
   "experience": [
     {
@@ -41,17 +128,6 @@
       "start": "2024 - 12/16",
       "end": null,
       "location": "Philippines",
-      "achievements": [
-        "IT Onboarding & User Support — Ran onboarding sessions for new hires covering ticketing systems, security policies, and device setup for a secure, productive start.",
-        "Network Infrastructure Administration — Deployed and maintained routers, switches, VLANs, LAN cabling, and wireless networks; monitored performance and resolved connectivity issues.",
-        "End-User & Technical Support — Delivered remote hardware/software/network troubleshooting, VPN setup, Microsoft 365 and Outlook support, and account provisioning.",
-        "TP-Link Omada SDN Administration — Deployed and managed multi-site SDN infrastructure via Omada Controller, handling WAN failover, QoS, VPN, and device monitoring.",
-        "Network Security & Web Filtering — Configured AdGuard DNS filtering to block malicious sites and strengthen network-wide security.",
-        "Client & IT Coordination — Partnered with clients and onshore IT teams on access management, remote setup, and issue resolution.",
-        "Microsoft Azure Administration — Handled user accounts, password resets, access control, and basic DNS configuration.",
-        "cPanel & Web Hosting Support — Managed mailbox, DNS, and hosting configurations, troubleshooting email delivery issues.",
-        "Email Migration Automation — Built PowerShell scripts to automate IMAP-to-Exchange Online mailbox migrations."
-      ],
       "tech": [
         "Microsoft 365",
         "Exchange Online",
@@ -73,6 +149,48 @@
         "Web Filtering",
         "cPanel",
         "Email Migration"
+      ],
+      "groups": [
+        {
+          "title": "Support & Onboarding",
+          "items": [
+            "Ran onboarding sessions for new hires covering ticketing systems, security policies, and device setup for a secure, productive start.",
+            "Delivered remote hardware/software/network troubleshooting, VPN setup, Microsoft 365 and Outlook support, and account provisioning.",
+            "Partnered with clients and onshore IT teams on access management, remote setup, and issue resolution."
+          ]
+        },
+        {
+          "title": "Network & Security",
+          "items": [
+            "Deployed and maintained routers, switches, VLANs, LAN cabling, and wireless networks; monitored performance and resolved connectivity issues.",
+            "Deployed and managed multi-site SDN infrastructure via Omada Controller, handling WAN failover, QoS, VPN, and device monitoring.",
+            "Configured AdGuard DNS filtering to block malicious sites and strengthen network-wide security."
+          ]
+        },
+        {
+          "title": "Cloud & Hosting",
+          "items": [
+            "Handled Azure user accounts, password resets, access control, and basic DNS configuration.",
+            "Managed cPanel mailbox, DNS, and hosting configurations, troubleshooting email delivery issues."
+          ]
+        },
+        {
+          "title": "Automation",
+          "items": [
+            "Built PowerShell scripts to automate IMAP-to-Exchange Online mailbox migrations."
+          ]
+        }
+      ],
+      "achievements": [
+        "IT Onboarding & User Support — Ran onboarding sessions for new hires covering ticketing systems, security policies, and device setup for a secure, productive start.",
+        "Network Infrastructure Administration — Deployed and maintained routers, switches, VLANs, LAN cabling, and wireless networks; monitored performance and resolved connectivity issues.",
+        "End-User & Technical Support — Delivered remote hardware/software/network troubleshooting, VPN setup, Microsoft 365 and Outlook support, and account provisioning.",
+        "TP-Link Omada SDN Administration — Deployed and managed multi-site SDN infrastructure via Omada Controller, handling WAN failover, QoS, VPN, and device monitoring.",
+        "Network Security & Web Filtering — Configured AdGuard DNS filtering to block malicious sites and strengthen network-wide security.",
+        "Client & IT Coordination — Partnered with clients and onshore IT teams on access management, remote setup, and issue resolution.",
+        "Microsoft Azure Administration — Handled user accounts, password resets, access control, and basic DNS configuration.",
+        "cPanel & Web Hosting Support — Managed mailbox, DNS, and hosting configurations, troubleshooting email delivery issues.",
+        "Email Migration Automation — Built PowerShell scripts to automate IMAP-to-Exchange Online mailbox migrations."
       ]
     }
   ],
@@ -81,28 +199,45 @@
       "title": "M365 Migration & Access Remediation",
       "date": "2026-06",
       "impact": "Reduced follow-up tickets by streamlining mailbox and OneDrive access requests.",
-      "tech": ["Exchange", "OneDrive", "Teams"],
+      "tech": [
+        "Exchange",
+        "OneDrive",
+        "Teams"
+      ],
       "description": "Supported cutover period for Microsoft 365 migration, resolving post-migration access issues and fixing broken file links after mailbox moves."
     },
     {
       "title": "VPN Onboarding for Remote Work",
       "date": "2026-04",
-      "impact": "Enabled secure remote access for multiple LGS staff across floors.",
-      "tech": ["OpenVPN", "GlobalProtect", "RDP"],
-      "description": "Packaged and deployed VPN configurations, .ovpn profiles, and RDP connection settings for staff onboarding using IT Test and LGS VPN profiles."
+      "impact": "Enabled secure remote access for multiple staff members across several floors.",
+      "tech": [
+        "OpenVPN",
+        "GlobalProtect",
+        "RDP"
+      ],
+      "description": "Packaged and deployed VPN configurations, .ovpn profiles, and RDP connection settings to onboard staff for secure remote work."
     },
     {
       "title": "IMAP to Exchange Online Email Migration Automation",
       "date": "2026-05",
       "impact": "Reduced manual migration effort and mailbox cutover errors through PowerShell automation.",
-      "tech": ["PowerShell", "Exchange Online", "IMAP", "Microsoft 365"],
+      "tech": [
+        "PowerShell",
+        "Exchange Online",
+        "IMAP",
+        "Microsoft 365"
+      ],
       "description": "Developed automation scripts to migrate user mailboxes from IMAP-based platforms to Microsoft Exchange Online, improving speed, accuracy, and consistency."
     },
     {
       "title": "Ticket Operations Hygiene",
       "date": "ongoing",
       "impact": "Keeps queue clean and SLA-visible with consistent status discipline.",
-      "tech": ["ServiceNow", "Excel/CSV", "Teams"],
+      "tech": [
+        "ServiceNow",
+        "Excel/CSV",
+        "Teams"
+      ],
       "description": "Daily triage, assignment, and status updates across Open/Processing/Awaiting/Hold. Export reporting for management visibility."
     }
   ],
